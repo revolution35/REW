@@ -244,7 +244,7 @@ selectUsd[i].addEventListener("click", function() {
 // } )
 // })
 async function openAddress(){
-  window.open('https://polygonscan.com/address/'+ ethAddress);
+  window.open('https://etherscan.io/address/'+ ethAddress);
 }
 
 async function login() {
