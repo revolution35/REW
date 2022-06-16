@@ -34,130 +34,130 @@ const chainToQuery = 'matic'
 //   }
 //   document.getElementById("home_btn").onclick = defultParm();
 
-var swiper = new Swiper(".image-slider", {
-  effect: "coverflow",
-  grabCursor: true,
-  centeredSlides: true,
-  slidesPerView: "auto",
-  coverflowEffect: {
-      rotate: 0,
-      stretch: 0,
-      depth: 100,
-      modifier: 2,
-      slideShadows: true,
-  },
-  loop:true,
-  autoplay: {
-        delay: 7000,
-        disableOnInteraction: true,
-  },
-});    
+// var swiper = new Swiper(".image-slider", {
+//   effect: "coverflow",
+//   grabCursor: true,
+//   centeredSlides: true,
+//   slidesPerView: "auto",
+//   coverflowEffect: {
+//       rotate: 0,
+//       stretch: 0,
+//       depth: 100,
+//       modifier: 2,
+//       slideShadows: true,
+//   },
+//   loop:true,
+//   autoplay: {
+//         delay: 7000,
+//         disableOnInteraction: true,
+//   },
+// });    
 
-let menu = document.querySelector('#menu-bar');
-let navbar = document.querySelector('.navbar');
+// let menu = document.querySelector('#menu-bar');
+// let navbar = document.querySelector('.navbar');
 
-menu.addEventListener('click', () =>{
-  menu.classList.toggle('fa-times');
-  navbar.classList.toggle('nav-toggle');
-});
+// menu.addEventListener('click', () =>{
+//   menu.classList.toggle('fa-times');
+//   navbar.classList.toggle('nav-toggle');
+// });
 
-window.onscroll = () =>{
-  menu.classList.remove('fa-times');
-  navbar.classList.remove('nav-toggle');
-}
+// window.onscroll = () =>{
+//   menu.classList.remove('fa-times');
+//   navbar.classList.remove('nav-toggle');
+// }
 
-var acc = document.getElementsByClassName("accordion");
-var i;
+// var acc = document.getElementsByClassName("accordion");
+// var i;
   
 
-for (i = 0; i < acc.length; i++) {
+// for (i = 0; i < acc.length; i++) {
 
  
 
 
-    acc[i].addEventListener("click", function() {
-        var panel = document.getElementsByClassName("active_");
-var panelActive = this.nextElementSibling;
-       if (panel.length > 0 ){
-        var panelOpen =  panel[0].nextElementSibling;
+//     acc[i].addEventListener("click", function() {
+//         var panel = document.getElementsByClassName("active_");
+// var panelActive = this.nextElementSibling;
+//        if (panel.length > 0 ){
+//         var panelOpen =  panel[0].nextElementSibling;
 
 
-        if( panelActive.style.display === "block"  ){
-            panelActive.style.display = "none";
-            this.classList.remove("active_");
+//         if( panelActive.style.display === "block"  ){
+//             panelActive.style.display = "none";
+//             this.classList.remove("active_");
 
 
-        }else{
-            if(panelActive.style.display === "none" ||  panelOpen.style.display === "block"){
-              panel[0].classList.remove("active_");
-              this.classList.add("active_"); 
-              panelActive.style.display = "block";
-              panelOpen.style.display = "none"
-      }
-        }
-        /* Toggle between adding and removing the "active" class,
-        to highlight the button that controls the panel */
+//         }else{
+//             if(panelActive.style.display === "none" ||  panelOpen.style.display === "block"){
+//               panel[0].classList.remove("active_");
+//               this.classList.add("active_"); 
+//               panelActive.style.display = "block";
+//               panelOpen.style.display = "none"
+//       }
+//         }
+//         /* Toggle between adding and removing the "active" class,
+//         to highlight the button that controls the panel */
 
-        /* Toggle between hiding and showing the active panel */
+//         /* Toggle between hiding and showing the active panel */
        
-    }else{ /* Toggle between adding and removing the "active" class,
-        to highlight the button that controls the panel */
-        this.classList.toggle("active_");
+//     }else{ /* Toggle between adding and removing the "active" class,
+//         to highlight the button that controls the panel */
+//         this.classList.toggle("active_");
 
-        /* Toggle between hiding and showing the active panel */
+//         /* Toggle between hiding and showing the active panel */
         
-        if (panelActive.style.display === "block") {
-            panelActive.style.display = "none";
+//         if (panelActive.style.display === "block") {
+//             panelActive.style.display = "none";
 
-        } else {
-            panelActive.style.display = "block";
+//         } else {
+//             panelActive.style.display = "block";
 
-        }}
-    });
-}
+//         }}
+//     });
+// }
 
 
-window.addEventListener('scroll', ()=> { 
-  // var opacity = (document.body.offsetHeight - document.body.scrollTop) / document.body.offsetHeight;
-  // var scale = (document.body.offsetHeight - document.body.scrollTop) / document.body.offsetHeight;
-  // document.documentElement.style.setProperty('--viewportheaderOpacity', opacity);
-  // document.documentElement.style.setProperty('--viewportheaderScale', scale);
-  // const output = document.querySelector("#contact_");
-  var int =document.documentElement.scrollTop;
-  var cint= 100/int;
+// window.addEventListener('scroll', ()=> { 
+//   // var opacity = (document.body.offsetHeight - document.body.scrollTop) / document.body.offsetHeight;
+//   // var scale = (document.body.offsetHeight - document.body.scrollTop) / document.body.offsetHeight;
+//   // document.documentElement.style.setProperty('--viewportheaderOpacity', opacity);
+//   // document.documentElement.style.setProperty('--viewportheaderScale', scale);
+//   // const output = document.querySelector("#contact_");
+//   var int =document.documentElement.scrollTop;
+//   var cint= 100/int;
   
-  if(int>10){
-    document.getElementById("h1_").style.transform="scale("+cint+")";
-    document.getElementById("h1_").style.opacity = cint;
-  }else{
-    document.getElementById("h1_").style.transform="scale(1)";
-    document.getElementById("h1_").style.opacity=1;
- }
-  const observer = new IntersectionObserver(entries => { 
+//   if(int>10){
+//     document.getElementById("h1_").style.transform="scale("+cint+")";
+//     document.getElementById("h1_").style.opacity = cint;
+//   }else{
+//     document.getElementById("h1_").style.transform="scale(1)";
+//     document.getElementById("h1_").style.opacity=1;
+//  }
+//   const observer = new IntersectionObserver(entries => { 
      
-    entries.forEach(entry => { 
+//     entries.forEach(entry => { 
          
-      const id = entry.target.getAttribute('id');
-      var opacity = (document.body.offsetHeight - document.body.scrollTop) / document.body.offsetHeight;
-  var scale = (document.body.offsetHeight - document.body.scrollTop) / document.body.offsetHeight;
-      if (entry.intersectionRatio > 0 ) { 
-        // document.querySelector(`[href="#${id}"]`).style.color = "var(--red)"; 
-        document.querySelector(`[href="#${id}"]`).classList.add("active");
-      } else { 
-        // document.querySelector(`[href="#${id}"]`).style.color = ""; 
-        document.querySelector(`[href="#${id}"]`).classList.remove("active");  
+//       const id = entry.target.getAttribute('id');
+//       var opacity = (document.body.offsetHeight - document.body.scrollTop) / document.body.offsetHeight;
+//   var scale = (document.body.offsetHeight - document.body.scrollTop) / document.body.offsetHeight;
+//       if (entry.intersectionRatio > 0 ) { 
+//         // document.querySelector(`[href="#${id}"]`).style.color = "var(--red)"; 
+//         document.querySelector(`[href="#${id}"]`).classList.add("active");
+//       } else { 
+//         // document.querySelector(`[href="#${id}"]`).style.color = ""; 
+//         document.querySelector(`[href="#${id}"]`).classList.remove("active");  
 
-        // console.log(entry);
-      }  
-    }); 
-  }); 
+//         // console.log(entry);
+//       }  
+//     }); 
+//   }); 
  
-  // Track all sections that have an id applied 
-  document.querySelectorAll('section[id]').forEach((section) => { 
-    observer.observe(section); 
-  }); 
+//   // Track all sections that have an id applied 
+//   document.querySelectorAll('section[id]').forEach((section) => { 
+//     observer.observe(section); 
+//   }); 
   
-});
+// });
 
 var modal = document.querySelector("#modal");
 var modalOverlay = document.querySelector("#modal-overlay");
@@ -195,16 +195,20 @@ selectUsd[i].addEventListener("click", function() {
   this.classList.add("active__");
   if( this.id==="usdt"){
     selectedUsd=usdt;
+    selectedUsdString="USDT"
     functionNameDeposit="depositUsdt";
   }else if( this.id==="usdc"){
     selectedUsd=usdc;
+    selectedUsdString="USDC"
     functionNameDeposit="depositUsdc";
   }else if( this.id==="busd"){
     selectedUsd=busd;
+    selectedUsdString="BUSD"
     functionNameDeposit="depositBusd";
   }else if( this.id==="dai"){
     selectedUsd=dai;
     functionNameDeposit="depositDai";
+    selectedUsdString="DAI"
   }else{ console.log('err usd selrcted');}
   getAllowace();
   getTokenBalance();
@@ -358,10 +362,10 @@ async function getNetwork(){
 
     // document.getElementById('chain').innerHTML = "вярна мрежа";
   }else{ 
-        document.getElementById('switch_network').onclick = switchNetworkGoerli;
-   
-    document.getElementById('switch_network').style.display = "inline-block";
- document.getElementById('btn_deposit').style.display = "none";
+
+  document.getElementById('switch_network').onclick = switchNetworkGoerli;
+  document.getElementById('switch_network').style.display = "inline-block";
+  document.getElementById('btn_deposit').style.display = "none";
 
     // document.getElementById("btn_deposit").className = "btn_n";
     // document.getElementById('btn_deposit').innerHTML = "Переключить сеть";
@@ -447,7 +451,6 @@ document.getElementById('amout_deposit').addEventListener("keyup", function (evt
   document.getElementById("amount_rew").innerHTML = ("≈" + amount_rew.toFixed(2) + " REW");
   if (amount > 0 ){
     getAllowace();
-
   }else{
     document.getElementById("btn_deposit").className = "btn_n";
     document.getElementById("btn_deposit").disabled = true;
@@ -568,17 +571,15 @@ async function getAllowace(){
       document.getElementById("btn_deposit").onclick = depositUsdToken;
       document.getElementById("btn_deposit").className = "btn";
       document.getElementById("btn_deposit").disabled = false;
-
-
- 
+      getTokenBalance();
  
     }else{
     document.getElementById("btn_deposit").onclick = approveTokenGoerli;
     document.getElementById("btn_deposit").innerHTML = "Разрешить";
     document.getElementById("btn_deposit").disabled = false;
+    getTokenBalance();
   }
-  getTokenBalance();
- 
+  
 }
 
 async function getBalance() {
@@ -589,14 +590,16 @@ async function getBalance() {
   getTokenBalance();
 
 }
+
+
 async function getTokenBalance() {
   rew_balance = balances_.find(item => item.token_address == rew);
   token_meta = balances_.find(item => item.token_address == selectedUsd);
   if (rew_balance== undefined){
-    document.getElementById("rew_balance").innerHTML = "Баланс: 0.00 REW"; 
+    document.getElementById("rew_balance").innerHTML = "Ваш Баланс: 0.00 REW"; 
 
   }else{
-    document.getElementById("rew_balance").innerHTML = "Баланс:"+rew_balance.balance / (10 ** rew_balance.decimals)+" REW";
+    document.getElementById("rew_balance").innerHTML = "Ваш баланс: "+rew_balance.balance / (10 ** rew_balance.decimals)+" REW";
   }
   if (token_meta ==  undefined ){
     document.getElementById("btn_deposit").disabled = true;
@@ -612,7 +615,7 @@ async function getTokenBalance() {
    
   let token_balance = token_meta.balance / (10 ** token_meta.decimals)
   tokenBalance = token_balance;
-   document.getElementById("token_balance").innerHTML ='Баланс: ' + token_balance.toFixed(2) 
+   document.getElementById("token_balance").innerHTML ='Баланс: ' + token_balance.toFixed(2) + " "+selectedUsdString;
  
    async function setMax () {
     document.getElementById("amout_deposit").value = token_balance.toFixed(2);
@@ -620,12 +623,13 @@ async function getTokenBalance() {
     document.getElementById("btn_deposit").className = "btn";
     var amount = document.getElementById("amout_deposit").value;
     var amount_rew = (amount * 10);
-    document.getElementById("amount_rew").innerHTML = ("≈" +  amount_rew.toFixed(2) + " REW");
+    document.getElementById("amount_rew").innerHTML = (amount_rew.toFixed(2) + " REW");
     getAllowace();
   }
    document.getElementById("max").onclick = setMax;
    document.getElementById("token_balance").onclick = setMax;
- 
+   document.getElementById("btn_deposit").className = "btn";
+   
    var amount = document.getElementById("amout_deposit").value;
    if (amount > token_balance){
      document.getElementById("btn_deposit").disabled = true;
@@ -716,8 +720,8 @@ async function depositUsdToken() {
  // 0x8Dcb65b333C35f8CFf2F7330F19E933ba0492EE9
   const receipt = await Moralis.executeFunction(options);
   //  console.log(receipt)
-  document.getElementById("btn_deposit").className = "content";
-  document.getElementById("btn_deposit").innerHTML = "Спасибо за вклад в РЕВОЛЮЦИЮ!!!";
+  document.getElementById("btn_deposit").className = "btn";
+  document.getElementById("btn_deposit").innerHTML = "Tранзакция отправлена";
   document.getElementById("btn_deposit").disabled = true;
   getTokenBalance();
   }catch (error) {
@@ -777,15 +781,11 @@ async function approveTokenGoerli() {
     
   },
  };
-
- 
    const receipt = await Moralis.executeFunction(options);
-   console.log(token_meta.decimals)
    document.getElementById("btn_deposit").className = "btn";
    document.getElementById("btn_deposit").onclick = depositUsdToken;
    document.getElementById("btn_deposit").innerHTML = "Купить REW";
    document.getElementById("btn_deposit").disabled = false;
-   getAllowace();
 
   } catch (error) {
     console.log(error);
@@ -793,7 +793,6 @@ async function approveTokenGoerli() {
    document.getElementById("btn_deposit").onclick = approveTokenGoerli;
    document.getElementById("btn_deposit").innerHTML = "Разрешить";
    document.getElementById("btn_deposit").disabled = false;
-   getAllowace();
    }
 }
 
