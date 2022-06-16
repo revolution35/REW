@@ -244,7 +244,7 @@ selectUsd[i].addEventListener("click", function() {
 // } )
 // })
 async function openAddress(){
-  window.open('https://etherscan.io/address/'+ ethAddress);
+  window.open('https://polygonscan.com/address/'+ ethAddress);
 }
 
 async function login() {
@@ -267,6 +267,14 @@ async function login() {
                 "pillar",
                 ] 
             })
+
+            getAddress();
+            document.getElementById("modal_guts").style.display = "block";
+            document.getElementById("connectt_metamask").style.display = "none";
+            user.save();
+            getNetwork();
+            getAddress();
+            getBalance();
         }else{
             
             let user = await Moralis.authenticate();
@@ -274,11 +282,13 @@ async function login() {
             getAddress();
             document.getElementById("modal_guts").style.display = "block";
             document.getElementById("connectt_metamask").style.display = "none";
+            document.getElementById('_address').onclick = openAddress;
+            ethAddress = Moralis.User.current().get('ethAddress');
+        
 
           //  document.getElementById("user_chip").style.display = "block";
             // document.getElementById("switch_network_eth").innerHTML = "Смени мрежа";
-            // document.getElementById("switch_network_eth").onclick = switchNetworkEth;
-            
+            // document.getElementById("switch_network_eth").onclick = switchNetworkEth;        
     user.save();
     getNetwork();
     getAddress();
@@ -406,6 +416,7 @@ getNetworkText = async () => {
           // document.getElementById("currentNetwork").style.display = "none";
           document.getElementById("modal_guts").style.display = "none";
           document.getElementById("connectt_metamask").style.display = "block";
+          getNetwork();
 
           
 
