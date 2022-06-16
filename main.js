@@ -276,7 +276,8 @@ async function login() {
             getAddress();
             getBalance();
         }else{
-            
+             getNetwork();
+
             let user = await Moralis.authenticate();
             const web3 = await Moralis.enableWeb3();
             getAddress();
@@ -290,7 +291,6 @@ async function login() {
             // document.getElementById("switch_network_eth").innerHTML = "Смени мрежа";
             // document.getElementById("switch_network_eth").onclick = switchNetworkEth;        
     user.save();
-    getNetwork();
     getAddress();
     getBalance();
     // populate();
@@ -321,31 +321,31 @@ function getAddress(){
     
 }
 
-function returnChainId(chainId){
-  switch (chainId) {
-      case 1: return "Eth";
-      case 3: return "Ropsten";
-      case 4: return "Rinkeby";
-      case 5: return "Goerli";
-      case 42: return "Kovan";
-      case 56: return "BSC";
-      case 97: return "BSC Testnet";
-      case 137: return "Matic";
-      case 1337: return "Local Dev Chain";
-      case 80001: return "Mumbai";
-    }
-}
+// function returnChainId(chainId){
+//   switch (chainId) {
+//       case 1: return "Eth";
+//       case 3: return "Ropsten";
+//       case 4: return "Rinkeby";
+//       case 5: return "Goerli";
+//       case 42: return "Kovan";
+//       case 56: return "BSC";
+//       case 97: return "BSC Testnet";
+//       case 137: return "Matic";
+//       case 1337: return "Local Dev Chain";
+//       case 80001: return "Mumbai";
+//     }
+// }
 
 async function getNetwork(){
-  let web3 = new Web3(window.ethereum)
-  chainId = await web3.eth.net.getId();
-  let _id = returnChainId(chainId);
+
+  const chainId = await Moralis.chainId;
+  console.log(chainId);
   // document.getElementById('currentNetwork').textContent = `Network: ${_id}`;
 
-  if(_id == "Goerli" ){
+  if(chainId == "0x5" ){
     // document.getElementById('btn_deposit').innerHTML = "Купить REW";
     // document.getElementById("btn_deposit").className = "btn";
-
+    document.getElementById('switch_network').onclick = switchNetworkGoerli;
     document.getElementById('btn_deposit').style.display = "inline-block";
     document.getElementById('switch_network').style.display = "none";
     // document.getElementById('switch_network_').style.display = "none";
@@ -358,10 +358,10 @@ async function getNetwork(){
 
     // document.getElementById('chain').innerHTML = "вярна мрежа";
   }else{ 
-    
-    document.getElementById('btn_deposit').style.display = "none";
+        document.getElementById('switch_network').onclick = switchNetworkGoerli;
+   
     document.getElementById('switch_network').style.display = "inline-block";
-    document.getElementById('switch_network').onclick = switchNetworkGoerli;
+ document.getElementById('btn_deposit').style.display = "none";
 
     // document.getElementById("btn_deposit").className = "btn_n";
     // document.getElementById('btn_deposit').innerHTML = "Переключить сеть";
@@ -384,16 +384,17 @@ async function getNetwork(){
   }
 }
 
-getNetworkText = async () => {
-    let web3 = new Web3(window.ethereum);
-    chainId = await web3.eth.net.getId();
-    let _id = returnChainId(chainId);
-    return (_id.toLowerCase());
-}
+// getNetworkText = async () => {
+//     let web3 = new Web3(window.ethereum);
+//     chainId = await web3.eth.net.getId();
+//     let _id = returnChainId(chainId);
+//     return (_id.toLowerCase());
+// }
 
 (async function (){
     if (Moralis.User.current() != null) {
       const web3 = await Moralis.enableWeb3();
+    
             document.getElementById("modal_guts").style.display = "block";
             document.getElementById("connectt_metamask").style.display = "none";
             // document.getElementById("btn-auth").style.display = "none";
@@ -416,9 +417,9 @@ getNetworkText = async () => {
           // document.getElementById("currentNetwork").style.display = "none";
           document.getElementById("modal_guts").style.display = "none";
           document.getElementById("connectt_metamask").style.display = "block";
-          getNetwork();
 
-          
+         
+
 
             
           // };
@@ -428,17 +429,17 @@ getNetworkText = async () => {
          
 })();  
 
-Moralis.onChainChanged((chain) => {
-  getNetwork();
+// Moralis.onChainChanged((chain) => {
+//   getNetwork();
 
-});
+// });
 
-const unsubscribe = Moralis.onAccountChanged((address) => {
-  console.log(address)
-  getAddress(); 
+// const unsubscribe = Moralis.onAccountChanged((address) => {
+//   console.log(address)
+//   getAddress(); 
 
-  // returns the new account --> ex. "0x1a2b3c4d..."
-});
+//   // returns the new account --> ex. "0x1a2b3c4d..."
+// });
 
 document.getElementById('amout_deposit').addEventListener("keyup", function (evt) {
   var amount = document.getElementById("amout_deposit").value;
@@ -472,37 +473,57 @@ document.getElementById('amout_deposit').addEventListener("keyup", function (evt
 async function switchNetworkGoerli(){
   try { const chainId = "0x5"; //Ethereum goerli
   const chainIdHex = await Moralis.switchNetwork(chainId); 
-   getNetwork();
+  
+  getNetwork();
+
 }catch{
   getNetwork();
-}
-  
-}
-
-async function switchNetworkEth(){
-  const chainId = "0x89";//Matic
-  const chainIdHex = await Moralis.switchNetwork(chainId); 
-  getNetwork();
+  }
 
 }
 
-async function addNetworkPolygon(){
-  const chainId = 137;
-  const chainName = "Polygon";
-  const currencyName = "MATIC";
-  const currencySymbol = "MATIC";
-  const rpcUrl = "https://rpc-mainnet.matic.network";
-  const blockExplorerUrl = "https://polygonscan.com/";
+// async function switchNetworkEth(){
+//   const chainId = "0x89";//Matic
+//   const chainIdHex = await Moralis.switchNetwork(chainId); 
+//   unsubscribe();
+// }
 
-  await Moralis.addNetwork(
-  chainId, 
-  chainName, 
-  currencyName, 
-  currencySymbol, 
-  rpcUrl,
-  blockExplorerUrl
-  );
-}
+// async function addNetworkPolygon(){
+//   const chainId = 137;
+//   const chainName = "Polygon";
+//   const currencyName = "MATIC";
+//   const currencySymbol = "MATIC";
+//   const rpcUrl = "https://rpc-mainnet.matic.network";
+//   const blockExplorerUrl = "https://polygonscan.com/";
+
+//   await Moralis.addNetwork(
+//   chainId, 
+//   chainName, 
+//   currencyName, 
+//   currencySymbol, 
+//   rpcUrl,
+//   blockExplorerUrl
+//   );
+// }
+
+// Subscribe to onChainChanged events
+const unsubscribe = Moralis.onChainChanged((chain) => {
+  console.log(chain);
+  curentNetworkId=chain;
+
+
+  // returns the new chain --> ex. "0x1"
+  if(chain == "0x5" ){
+    document.getElementById('switch_network').style.display = "none";
+    document.getElementById('btn_deposit').style.display = "inline-block";
+  }else{ 
+        document.getElementById('switch_network').onclick = switchNetworkGoerli;
+    document.getElementById('switch_network').style.display = "inline-block";
+ document.getElementById('btn_deposit').style.display = "none";
+  }
+});
+
+
 
 // function onBridge() {
 //   document.getElementById("overlay_bridge").style.display = "block";
@@ -525,6 +546,7 @@ const addressFond= "0xFa8471C16D6D2d8B03A1B78e4d9b2a2BB05C070E";
 var functionNameDeposit ="depositUsdt"; 
 var tokenBalance = 0;
 var balances_ = "";
+var curentNetworkId = "";
 
 
 
@@ -795,57 +817,57 @@ async function approveTokenGoerli() {
 //  getBalanceBgnt();
 // }, false);
 
-async function getBalanceBgnt() {
-  const options = { chain: 'matic'}
-  const balances = await Moralis.Web3API.account.getTokenBalances(options);
+// async function getBalanceBgnt() {
+//   const options = { chain: 'matic'}
+//   const balances = await Moralis.Web3API.account.getTokenBalances(options);
  
-  bgnt_meta = balances.find(item => item.token_address == "0x25555d94b299f373037bffb68bdd322e21a806ef");
-  if (bgnt_meta ==  undefined ){
-  //  document.getElementById("bgnt_balance").innerHTML = "0.00"
-  //  document.getElementById("bgnt_balance_").innerHTML = "0.00"
-  //  document.getElementById("btn_deposit_bgnt").disabled = true;
- 
- 
-  }else{
-   bgnt_balance = bgnt_meta.balance / (10 ** bgnt_meta.decimals)
-  //  document.getElementById("bgnt_balance").innerHTML = bgnt_balance.toFixed(2)+ ' BGNT'
-  //  document.getElementById("bgnt_balance_").innerHTML = bgnt_balance.toFixed(2)+ ' BGNT'
+//   bgnt_meta = balances.find(item => item.token_address == "0x25555d94b299f373037bffb68bdd322e21a806ef");
+//   if (bgnt_meta ==  undefined ){
+//   //  document.getElementById("bgnt_balance").innerHTML = "0.00"
+//   //  document.getElementById("bgnt_balance_").innerHTML = "0.00"
+//   //  document.getElementById("btn_deposit_bgnt").disabled = true;
  
  
-   async function setMax () {
-    document.getElementById("amount_bgnt_sand").value = bgnt_balance;
-    initAddress();
+//   }else{
+//    bgnt_balance = bgnt_meta.balance / (10 ** bgnt_meta.decimals)
+//   //  document.getElementById("bgnt_balance").innerHTML = bgnt_balance.toFixed(2)+ ' BGNT'
+//   //  document.getElementById("bgnt_balance_").innerHTML = bgnt_balance.toFixed(2)+ ' BGNT'
  
-   }
-   async function setMaxContract () {
-    //  document.getElementById("amout_deposit_").value = bgnt_balance;
-    //  var amount = document.getElementById("amout_deposit_").value;
-    //  var amount_bgnt = (amount / 1.95);
-    //  document.getElementById("convert_bgnt").innerHTML = ("≈" + amount_bgnt.toFixed(2) + " EURT");
-    //  document.getElementById("btn_deposit_bgnt").disabled = false;
-   }
  
-  //  document.getElementById("max_bgnt").onclick = setMax;
-  //  document.getElementById("bgnt_balance").onclick = setMax;
-  //  document.getElementById("bgnt_balance_").onclick = setMaxContract;
+//    async function setMax () {
+//     document.getElementById("amount_bgnt_sand").value = bgnt_balance;
+//     initAddress();
+ 
+//    }
+//    async function setMaxContract () {
+//     //  document.getElementById("amout_deposit_").value = bgnt_balance;
+//     //  var amount = document.getElementById("amout_deposit_").value;
+//     //  var amount_bgnt = (amount / 1.95);
+//     //  document.getElementById("convert_bgnt").innerHTML = ("≈" + amount_bgnt.toFixed(2) + " EURT");
+//     //  document.getElementById("btn_deposit_bgnt").disabled = false;
+//    }
+ 
+//   //  document.getElementById("max_bgnt").onclick = setMax;
+//   //  document.getElementById("bgnt_balance").onclick = setMax;
+//   //  document.getElementById("bgnt_balance_").onclick = setMaxContract;
  
    
-  //  let amount = document.getElementById("amount_bgnt_sand").value;
-  //  let amout_deposit_=document.getElementById("amout_deposit_").value;
+//   //  let amount = document.getElementById("amount_bgnt_sand").value;
+//   //  let amout_deposit_=document.getElementById("amout_deposit_").value;
  
-  //  if (amount > bgnt_balance){
-  //    document.getElementById("sand_btn").disabled = true;
-  //    console.log(bgnt_balance)
-  //    setMax();
-  //    alert("Недостатъчен баланс");   
-  //  } 
-  //  if (amout_deposit_ > bgnt_balance){
-  //    // document.getElementById("sand_btn").disabled = true;
-  //    setMaxContract();
-  //    alert("Недостатъчен баланс"); 
-  //  } 
-  }
-}
+//   //  if (amount > bgnt_balance){
+//   //    document.getElementById("sand_btn").disabled = true;
+//   //    console.log(bgnt_balance)
+//   //    setMax();
+//   //    alert("Недостатъчен баланс");   
+//   //  } 
+//   //  if (amout_deposit_ > bgnt_balance){
+//   //    // document.getElementById("sand_btn").disabled = true;
+//   //    setMaxContract();
+//   //    alert("Недостатъчен баланс"); 
+//   //  } 
+//   }
+// }
 
 // async function copyAddress() {
 //   var str = Moralis.User.current().get('ethAddress');
