@@ -803,7 +803,7 @@ transform: scale(1.05);
   /* needs to look OK with or without scrollbar */
   right: 20px;
 
-  font-size: 3rem;
+  font-size: 1.5rem;
 }
 
 .modal .close-button:hover {
