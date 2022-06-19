@@ -1,920 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Народовластие</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/3c8b009254.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
+    <link rel="icon" href="images/flag.png" type="image/png">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
-  const serverUrl = "https://cfwkoognqtom.usemoralis.com:2053/server"; //Server url from moralis.io
-  const appId = "BgQ6S4bMln5dfMrSV43JiOtncK3OTvLEY3G6bXFf"; // Application id from moralis.io
-  Moralis.start({ serverUrl, appId });
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;900&display=swap" rel="stylesheet">
   
+    <!-- custom css file link  -->
 
-  let ethAddress;
-let network = '';
-const chainToQuery = 'matic'
+    <link rel="stylesheet" href="./style.css">
 
-// // Smooth scrolling for browsers that don't support CSS smooth scrolling 
-// if (window.getComputedStyle(document.documentElement).scrollBehavior !== 'smooth') { 
-//     document.querySelectorAll('a[href^="#"]').forEach(internalLink => { 
-//         const targetElement = document.querySelector(internalLink.getAttribute('href')); 
-//         if (targetElement) { 
-//             internalLink.addEventListener('click', (e) => { 
-//                 targetElement.scrollIntoView({ 
-//                     behavior: 'smooth', 
-//                 }); 
-//                 e.preventDefault(); 
-//             }); 
-//         } 
-//     }); 
-// }
-
-// var options = {
-//         root: document.querySelector('#DOMContentLoaded'),
-//         rootMargin: '0px',
-//         threshold: 0.50
-//     }
-// async function defultParm() {
-//     document.getElementById("h1_").style.transform="scale(1)";
-//     document.getElementById("h1_").style.opacity=1;
-//   }
-//   document.getElementById("home_btn").onclick = defultParm();
-
-// var swiper = new Swiper(".image-slider", {
-//   effect: "coverflow",
-//   grabCursor: true,
-//   centeredSlides: true,
-//   slidesPerView: "auto",
-//   coverflowEffect: {
-//       rotate: 0,
-//       stretch: 0,
-//       depth: 100,
-//       modifier: 2,
-//       slideShadows: true,
-//   },
-//   loop:true,
-//   autoplay: {
-//         delay: 7000,
-//         disableOnInteraction: true,
-//   },
-// });    
-
-// let menu = document.querySelector('#menu-bar');
-// let navbar = document.querySelector('.navbar');
-
-// menu.addEventListener('click', () =>{
-//   menu.classList.toggle('fa-times');
-//   navbar.classList.toggle('nav-toggle');
-// });
-
-// window.onscroll = () =>{
-//   menu.classList.remove('fa-times');
-//   navbar.classList.remove('nav-toggle');
-// }
-
-// var acc = document.getElementsByClassName("accordion");
-// var i;
+</head>
+<body>
   
+<!-- header section starts  -->
 
-// for (i = 0; i < acc.length; i++) {
+<header style="padding-top: 0%; padding-bottom: 0%;">
 
+    <a><img src="images/flag.png" alt="" width="12%"></a>
+
+    <div id="menu-bar" class="fas fa-bars"></div>
+
+    <nav class="navbar" >
+        <a class="active" id="home_btn" >REW</a>
+        <!-- <a href="#pricing_" class="">Этапы</a>
+        <a href="#features_" class="">Программа</a> -->
+        <!-- <a href="#about_" class="fa-brands fa-line" style="display: inline; " ></a> -->
+        <!-- <a href="#usage_" class="">usage</a>
+        <a href="#review_" class="">review</a>
+        <a href="#contact_" class="">contact</a> -->
+        <!-- <a href="#" class="btn" onclick="login()" style="display: none;">Подключить MetaMask</a> -->
+    </nav>
+
+      
+
+    <!-- <video src="videos/smoke-background-optimized.mp4" class="video-header" autoplay loop muted></video> -->
+
+</header>
+
+   
+<!-- header section ends -->
+<section id="home_" class="home">
  
+ 
+    
+    <!-- <a href="#" class="btn">Купить революционный вексель</a> -->
 
+<!-- home section starts  -->
 
-//     acc[i].addEventListener("click", function() {
-//         var panel = document.getElementsByClassName("active_");
-// var panelActive = this.nextElementSibling;
-//        if (panel.length > 0 ){
-//         var panelOpen =  panel[0].nextElementSibling;
+    <div class="content">
+        <h3>НA КОЛ!</h3>
+        <!-- <p></p> -->
 
+            <!-- <a id="openbtn" onclick="openBtn()"  class="btn" style="color: #272D3B; background-color: white;">Купить REW</a> -->
 
-//         if( panelActive.style.display === "block"  ){
-//             panelActive.style.display = "none";
-//             this.classList.remove("active_");
-
-
-//         }else{
-//             if(panelActive.style.display === "none" ||  panelOpen.style.display === "block"){
-//               panel[0].classList.remove("active_");
-//               this.classList.add("active_"); 
-//               panelActive.style.display = "block";
-//               panelOpen.style.display = "none"
-//       }
-//         }
-//         /* Toggle between adding and removing the "active" class,
-//         to highlight the button that controls the panel */
-
-//         /* Toggle between hiding and showing the active panel */
-       
-//     }else{ /* Toggle between adding and removing the "active" class,
-//         to highlight the button that controls the panel */
-//         this.classList.toggle("active_");
-
-//         /* Toggle between hiding and showing the active panel */
         
-//         if (panelActive.style.display === "block") {
-//             panelActive.style.display = "none";
-
-//         } else {
-//             panelActive.style.display = "block";
-
-//         }}
-//     });
-// }
-
-
-// window.addEventListener('scroll', ()=> { 
-//   // var opacity = (document.body.offsetHeight - document.body.scrollTop) / document.body.offsetHeight;
-//   // var scale = (document.body.offsetHeight - document.body.scrollTop) / document.body.offsetHeight;
-//   // document.documentElement.style.setProperty('--viewportheaderOpacity', opacity);
-//   // document.documentElement.style.setProperty('--viewportheaderScale', scale);
-//   // const output = document.querySelector("#contact_");
-//   var int =document.documentElement.scrollTop;
-//   var cint= 100/int;
-  
-//   if(int>10){
-//     document.getElementById("h1_").style.transform="scale("+cint+")";
-//     document.getElementById("h1_").style.opacity = cint;
-//   }else{
-//     document.getElementById("h1_").style.transform="scale(1)";
-//     document.getElementById("h1_").style.opacity=1;
-//  }
-//   const observer = new IntersectionObserver(entries => { 
+  <div class="modal-overlay closed" id="modal-overlay"></div>
+<div class="modal closed" id="modal">
+  <button class="close-button" id="close-button"><i class="fa-solid fa-xmark" style="color: #272D3B ; background-color: white;"></i></button>
+<div class="modal-guts" id="modal_guts" style="display: none;">
+  <i class="fa-solid fa-copy" id="_address" style="margin-right: 10px; font-size: 2rem; border-bottom: solid #272D3B 2px; cursor: pointer;">Address</i> 
+    <p></p>
+    <a class="active__" name="selectusd"  id="usdt"><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/825.png" style="height: 2.2rem; margin-right: 5px; padding-top: 15px; text-align: center; " alt="">USDT</a>
+    <a name="selectusd" href="#selectusd" id="usdc"><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png" style="height: 2.2rem; margin-right: 5px; padding-top: 15px; text-align: center; " alt="">USDC</a>
+    <a name="selectusd" href="#selectusd" id="dai"><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/4943.png" style="height: 2.2rem; margin-right: 5px; padding-top: 15px; text-align: center; " alt="">DAI</a>
+    <a name="selectusd" href="#selectusd" id="busd"><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/4687.png" style="height: 2.2rem; margin-right: 5px; padding-top: 15px; text-align: center; " alt="">BUSD</a>
+    <p><span id="token_balance" >баланс</span>
      
-//     entries.forEach(entry => { 
-         
-//       const id = entry.target.getAttribute('id');
-//       var opacity = (document.body.offsetHeight - document.body.scrollTop) / document.body.offsetHeight;
-//   var scale = (document.body.offsetHeight - document.body.scrollTop) / document.body.offsetHeight;
-//       if (entry.intersectionRatio > 0 ) { 
-//         // document.querySelector(`[href="#${id}"]`).style.color = "var(--red)"; 
-//         document.querySelector(`[href="#${id}"]`).classList.add("active");
-//       } else { 
-//         // document.querySelector(`[href="#${id}"]`).style.color = ""; 
-//         document.querySelector(`[href="#${id}"]`).classList.remove("active");  
+   </p>
+    <div><input  type="number" min="0" max="2000"  placeholder="amount" autocomplete="off" id="amout_deposit"><span id="max" style="width: 5rem; color: white;" >$</span>
+  </div>
+  <p style="margin-top: 1px ;">
+  <h1 id="amount_rew"  >REW: 0.00</h1></p>
+  <p>
+    <button class="btn" id="btn_deposit" disabled="true">Купить REW</button> <button href="" class="btn" id="switch_network">Cменить сеть</button>  
+  </p>
+    <h1 id="rew_balance">баланс: 0.00</h1></p>
+</div>
+<button class="btn" onclick="login()" id="connectt_metamask" style="margin: auto; margin-top: 50%; z-index: 100;">Подключить МетаМаск</button>
+</div>
 
-//         // console.log(entry);
-//       }  
-//     }); 
-//   }); 
- 
-//   // Track all sections that have an id applied 
-//   document.querySelectorAll('section[id]').forEach((section) => { 
-//     observer.observe(section); 
-//   }); 
-  
-// });
-
-var modal = document.querySelector("#modal");
-var modalOverlay = document.querySelector("#modal-overlay");
-var closeButton = document.querySelector("#close-button");
-var openButton = document.querySelector("#open-button");
-
-closeButton.addEventListener("click", function() {
-  modal.classList.toggle("closed");
-  modalOverlay.classList.toggle("closed");
-});
-
-openButton.addEventListener("click", function() {
-  modal.classList.toggle("closed");
-  modalOverlay.classList.toggle("closed");
-  getBalance();
-});
-
-async function openBtn(){
-  modal.classList.toggle("closed");
-  modalOverlay.classList.toggle("closed");
-  getBalance();
-
-}
-
-modalOverlay.addEventListener("click", function() {
-  modal.classList.toggle("closed");
-  modalOverlay.classList.toggle("closed");
-});
- 
-active = document.getElementsByClassName("active__");
-selectUsd = document.getElementsByName("selectusd"); 
-for (i = 0; i < selectUsd.length; i++) {
-selectUsd[i].addEventListener("click", function() {
-  active[0].classList.remove("active__");
-  this.classList.add("active__");
-  if( this.id==="usdt"){
-    selectedUsd=usdt;
-    selectedUsdString="USDT"
-    functionNameDeposit="depositUsdt";
-  }else if( this.id==="usdc"){
-    selectedUsd=usdc;
-    selectedUsdString="USDC"
-    functionNameDeposit="depositUsdc";
-  }else if( this.id==="busd"){
-    selectedUsd=busd;
-    selectedUsdString="BUSD"
-    functionNameDeposit="depositBusd";
-  }else if( this.id==="dai"){
-    selectedUsd=dai;
-    functionNameDeposit="depositDai";
-    selectedUsdString="DAI"
-  }else{ console.log('err usd selrcted');}
-  getAllowace();
-  getTokenBalance();
-});
-}
-
-
-// 
-// Когда пользователь прокручивает страницу, выполнить myFunction 
-// window.onscroll = function() {myFunction()};
-
-// function myFunction() {
-//   var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-//   var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-//   var scrolled = (winScroll / height) * 100;
-//   document.getElementById("h1_").style.transform="scale(0.5)";
-// }
-
-// var $links = $('#myBar a');
-// $links.on('click',function(e) {
-//   e.preventDefault();
-//   $links.removeClass('active');
-//   $(this).addClass('active');
-// })
-
-// document.querySelectorAll('.accordion_btn').forEach(button =>{
-// button.addEventListener('click', ()=>{
-//   const accordionContent=button.nextElementSibling;
-//   button.classList.toggle('accordion__btn--active');
-//   if (button.classList.contains('accordion__btn--active')){
-//     accordionContent.style.display="block";
-//   }
-//   else{
-//     accordionContent.style.display="none";
-
-//   }
-// } )
-// })
-async function openAddress(){
-  window.open('https://polygonscan.com/address/'+ ethAddress);
-}
-
-async function login() {
-  try {
-    // let currentUser = Moralis.User.current();
-    
-        if (typeof screen.orientation === 'undefined') { 
-            
-            await Moralis.authenticate({ provider: "walletconnect" })
-            
-            const user = await Moralis.authenticate({ 
-                provider: "walletconnect", 
-                signingMessage: "Крипто лев",
-                mobileLinks: [
-                "rainbow",
-                "metamask",
-                "argent",
-                "trust",
-                "imtoken",
-                "pillar",
-                ] 
-            })
-
-            getAddress();
-            document.getElementById("modal_guts").style.display = "block";
-            document.getElementById("connectt_metamask").style.display = "none";
-            user.save();
-            getNetwork();
-            getAddress();
-            getBalance();
-        }else{
-             getNetwork();
-
-            let user = await Moralis.authenticate();
-            const web3 = await Moralis.enableWeb3();
-            getAddress();
-            document.getElementById("modal_guts").style.display = "block";
-            document.getElementById("connectt_metamask").style.display = "none";
-            document.getElementById('_address').onclick = openAddress;
-            ethAddress = Moralis.User.current().get('ethAddress');
+        <!-- <a href="#" class="btn">Купить REW</a> -->
         
 
-          //  document.getElementById("user_chip").style.display = "block";
-            // document.getElementById("switch_network_eth").innerHTML = "Смени мрежа";
-            // document.getElementById("switch_network_eth").onclick = switchNetworkEth;        
-    user.save();
-    getAddress();
-    getBalance();
-    // populate();
-    // getBalanceBgnt();
-    document.getElementById('_address').onclick = openAddress;
-    ethAddress = Moralis.User.current().get('ethAddress');
+        <!-- <div class="swiper-container image-slider">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="images/shot-01.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="images/shot-02.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="images/shot-03.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="images/shot-04.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="images/shot-05.jpg" alt=""></div>
+        </div>
+      </div>
+    </div> -->
 
-
-  
-    // document.getElementById("_address").onclick = copyAddress;  
-      caonsole.log(error);
-        }
-    }
-   catch (error) {
-    console.log(error);
-  }
-}
-
-function getAddress(){
-   ethAddress = Moralis.User.current().get('ethAddress');
-    let firstFive = ethAddress.substring(0, 6);
-    let lastFive = ethAddress.slice(ethAddress.length - 4);
-    let _address = `${firstFive}...${lastFive}`;
-    document.getElementById('_address').textContent = "  "+_address;
-    // document.getElementById('address_wollett').innerHTML = "💳 "+_address;
-    // document.getElementById('address_wollett').style.cursor = "pointer";
-    // document.getElementById('address_wollett').onclick = copyAddress;
-    
-}
-
-// function returnChainId(chainId){
-//   switch (chainId) {
-//       case 1: return "Eth";
-//       case 3: return "Ropsten";
-//       case 4: return "Rinkeby";
-//       case 5: return "Goerli";
-//       case 42: return "Kovan";
-//       case 56: return "BSC";
-//       case 97: return "BSC Testnet";
-//       case 137: return "Matic";
-//       case 1337: return "Local Dev Chain";
-//       case 80001: return "Mumbai";
-//     }
-// }
-
-async function getNetwork(){
-
-  const chainId = await Moralis.chainId;
-  console.log(chainId);
-  // document.getElementById('currentNetwork').textContent = `Network: ${_id}`;
-
-  if(chainId == "0x5" ){
-    // document.getElementById('btn_deposit').innerHTML = "Купить REW";
-    // document.getElementById("btn_deposit").className = "btn";
-    document.getElementById('switch_network').onclick = switchNetworkGoerli;
-    document.getElementById('btn_deposit').style.display = "inline-block";
-    document.getElementById('switch_network').style.display = "none";
-    // document.getElementById('switch_network_').style.display = "none";
-    // document.getElementById('sand_btn').style.display = "none";
-    // document.getElementById('switch_network_eth').style.display = "table-cell";
-    // document.getElementById('add_network_mumbai').style.display = "table-cell";
-    // document.getElementById('sand_btn').style.display = "block";
-    // document.getElementById('switch_network_eth').style.display = "none";
-    // document.getElementById('add_network_mumbai').style.display = "none";
-
-    // document.getElementById('chain').innerHTML = "вярна мрежа";
-  }else{ 
-
-  document.getElementById('switch_network').onclick = switchNetworkGoerli;
-  document.getElementById('switch_network').style.display = "inline-block";
-  document.getElementById('btn_deposit').style.display = "none";
-
-    // document.getElementById("btn_deposit").className = "btn_n";
-    // document.getElementById('btn_deposit').innerHTML = "Переключить сеть";
-    // document.getElementById('btn_deposit').onclick = "Переключить сеть";
-
-
-
-    // document.getElementById('chain').innerHTML = "Преключи мрежата";
-    // document.getElementById('btn_deposit').style.display = "none";
-    // document.getElementById('btn_deposit_bgnt').style.display = "none";
-    // document.getElementById('switch_network').style.display = "block";
-    // document.getElementById('switch_network_').style.display = "block";
-    // document.getElementById('sand_btn').style.display = "none";
-    // document.getElementById('switch_network_eth').style.display = "table-cell";
-    // document.getElementById('add_network_mumbai').style.display = "table-cell";
-    // document.getElementById('btn_deposit').style.display = "none";
-    // document.getElementById('btn_deposit_bgnt').style.display = "none";
-    // document.getElementById('switch_network').style.display = "block";
-    // document.getElementById('switch_network_').style.display = "block";
-  }
-}
-
-// getNetworkText = async () => {
-//     let web3 = new Web3(window.ethereum);
-//     chainId = await web3.eth.net.getId();
-//     let _id = returnChainId(chainId);
-//     return (_id.toLowerCase());
-// }
-
-(async function (){
-    if (Moralis.User.current() != null) {
-      const web3 = await Moralis.enableWeb3();
-    
-            document.getElementById("modal_guts").style.display = "block";
-            document.getElementById("connectt_metamask").style.display = "none";
-            // document.getElementById("btn-auth").style.display = "none";
-            // document.getElementById("connect_wallet").style.display = "none";
-            // document.getElementById("_address_").style.display = "block";
-            // document.getElementById("btn-logout").style.display = "block";
-            // document.getElementById("switch_network_eth").innerHTML = "Смени мрежа";
-            // document.getElementById("switch_network_eth").onclick = switchNetworkEth;
-            // document.getElementById("currentNetwork").style.display = "block";
-            document.getElementById('_address').onclick = openAddress;
-
-          getBalance();
-          getNetwork();
-          getAddress(); 
-        }else{
-          // document.getElementById("connect_wallet").style.display = "block";
-          // document.getElementById("_address_").style.display = "none";
-          // document.getElementById("switch_network_eth").innerHTML = "Connect Wallett 🦊";
-          // document.getElementById("switch_network_eth").onclick = function () { document.getElementById("connect_wallet").click();
-          // document.getElementById("currentNetwork").style.display = "none";
-          document.getElementById("modal_guts").style.display = "none";
-          document.getElementById("connectt_metamask").style.display = "block";
-
-         
-
-
-            
-          // };
-  
-          
-        }
-         
-})();  
-
-// Moralis.onChainChanged((chain) => {
-//   getNetwork();
-
-// });
-
-// const unsubscribe = Moralis.onAccountChanged((address) => {
-//   console.log(address)
-//   getAddress(); 
-
-//   // returns the new account --> ex. "0x1a2b3c4d..."
-// });
-
-document.getElementById('amout_deposit').addEventListener("keyup", function (evt) {
-  var amount = document.getElementById("amout_deposit").value;
-  var amount_rew = (amount * 10);
-  document.getElementById("amount_rew").innerHTML = ("≈" + amount_rew.toFixed(2) + " REW");
-  if (amount > 0 ){
-    getAllowace();
-  }else{
-    document.getElementById("btn_deposit").className = "btn_n";
-    document.getElementById("btn_deposit").disabled = true;
-  }
-  
-
-
-}, false);
-
-// document.getElementById('amout_deposit').addEventListener("keyup", function (evt) {
-//   var amount = document.getElementById("amout_deposit").value;
-//   var amount_bgnt = (amount * 1.95583);
-//   document.getElementById("convert_bgnt_").innerHTML = ("≈" +  amount_bgnt.toFixed(2) + " BGNt");
-//   if (amount > 0 ){
-//     document.getElementById("btn_deposit").disabled = false;
-//   }else{
-//     document.getElementById("btn_deposit").disabled = true;
-//   }
-//   getAllowace();
-//   getEurtBalance();
-// }, false);
-
-async function switchNetworkGoerli(){
-  try { const chainId = "0x5"; //Ethereum goerli
-  const chainIdHex = await Moralis.switchNetwork(chainId); 
-  
-  getNetwork();
-
-}catch{
-  getNetwork();
-  }
-
-}
-
-// async function switchNetworkEth(){
-//   const chainId = "0x89";//Matic
-//   const chainIdHex = await Moralis.switchNetwork(chainId); 
-//   unsubscribe();
-// }
-
-// async function addNetworkPolygon(){
-//   const chainId = 137;
-//   const chainName = "Polygon";
-//   const currencyName = "MATIC";
-//   const currencySymbol = "MATIC";
-//   const rpcUrl = "https://rpc-mainnet.matic.network";
-//   const blockExplorerUrl = "https://polygonscan.com/";
-
-//   await Moralis.addNetwork(
-//   chainId, 
-//   chainName, 
-//   currencyName, 
-//   currencySymbol, 
-//   rpcUrl,
-//   blockExplorerUrl
-//   );
-// }
-
-// Subscribe to onChainChanged events
-const unsubscribe = Moralis.onChainChanged((chain) => {
-  console.log(chain);
-  curentNetworkId=chain;
-
-
-  // returns the new chain --> ex. "0x1"
-  if(chain == "0x5" ){
-    document.getElementById('switch_network').style.display = "none";
-    document.getElementById('btn_deposit').style.display = "inline-block";
-  }else{ 
-        document.getElementById('switch_network').onclick = switchNetworkGoerli;
-    document.getElementById('switch_network').style.display = "inline-block";
- document.getElementById('btn_deposit').style.display = "none";
-  }
-});
-
-
-
-// function onBridge() {
-//   document.getElementById("overlay_bridge").style.display = "block";
-// }
- 
-// function offBridge() {
-//   document.getElementById("overlay_bridge").style.display = "none";
-// }
-
-const usdt= "0x8dcb65b333c35f8cff2f7330f19e933ba0492ee9";
-const usdc= "0x44a84167810290c9992bee4791d527dbbcd5beb4";
-const dai= "0x847745be3ee692707edde037ea5bf37b2c224603";
-const busd= "";
-var selectedUsd ="0x8dcb65b333c35f8cff2f7330f19e933ba0492ee9";
-var selectedUsdString ="USDT"
-var token_meta;
-const addressSale = "0x76E19cdFcA547ab6fBf9f3d3b030D4dc5D620aeF";
-const rew = "0x9d0428aac8a7c511ef9bc9e53de7b646d1088200";
-const addressFond= "0xFa8471C16D6D2d8B03A1B78e4d9b2a2BB05C070E";
-var functionNameDeposit ="depositUsdt"; 
-var tokenBalance = 0;
-var balances_ = "";
-var curentNetworkId = "";
-
-
-
-
-//Get token allowace on ETH
-async function getAllowace(){
-  let address = Moralis.User.current().get('ethAddress');
-    const options = {
-    chain: "0x5",
-    owner_address: address,
-    spender_address: addressSale,
-    address: selectedUsd
-    };
-   const allowance = await Moralis.Web3API.token.getTokenAllowance(options)
-   var value_allowance = allowance.allowance / (10 ** token_meta.decimals);
-     var amount = document.getElementById("amout_deposit").value;
-    if(amount <= value_allowance ){
-      document.getElementById("btn_deposit").innerHTML = "Купить REW";
-      document.getElementById("btn_deposit").onclick = depositUsdToken;
-      document.getElementById("btn_deposit").className = "btn";
-      document.getElementById("btn_deposit").disabled = false;
-      getTokenBalance();
- 
-    }else{
-    document.getElementById("btn_deposit").onclick = approveTokenGoerli;
-    document.getElementById("btn_deposit").innerHTML = "Разрешить";
-    document.getElementById("btn_deposit").disabled = false;
-    getTokenBalance();
-  }
-  
-}
-
-async function getBalance() {
-  const options = { chain: 'goerli'}
-  const balances = await Moralis.Web3API.account.getTokenBalances(options);
-  balances_= balances;
-  console.log(balances_);
-  getTokenBalance();
-
-}
-
-
-async function getTokenBalance() {
-  rew_balance = balances_.find(item => item.token_address == rew);
-  token_meta = balances_.find(item => item.token_address == selectedUsd);
-  if (rew_balance== undefined){
-    document.getElementById("rew_balance").innerHTML = "Ваш Баланс: 0.00 REW"; 
-
-  }else{
-    document.getElementById("rew_balance").innerHTML = "Ваш баланс: "+rew_balance.balance / (10 ** rew_balance.decimals)+" REW";
-  }
-  if (token_meta ==  undefined ){
-    document.getElementById("btn_deposit").disabled = true;
-    document.getElementById("btn_deposit").className = "btn_n";
-    var amount = document.getElementById("amout_deposit").value;
-    document.getElementById("token_balance").innerHTML = "Баланс: 0.00"; 
-    if (amount > 0){
-      document.getElementById("btn_deposit").disabled = true;
-     document.getElementById("btn_deposit").className = "btn_n";
-     document.getElementById("btn_deposit").innerHTML = "Недостаточно средств";
-    }
-  }else{
    
-  let token_balance = token_meta.balance / (10 ** token_meta.decimals)
-  tokenBalance = token_balance;
-   document.getElementById("token_balance").innerHTML ='Баланс: ' + token_balance.toFixed(2) + " "+selectedUsdString;
- 
-   async function setMax () {
-    document.getElementById("amout_deposit").value = token_balance.toFixed(2);
-    document.getElementById("btn_deposit").disabled = false;
-    document.getElementById("btn_deposit").className = "btn";
-    var amount = document.getElementById("amout_deposit").value;
-    var amount_rew = (amount * 10);
-    document.getElementById("amount_rew").innerHTML = (amount_rew.toFixed(2) + " REW");
-    getAllowace();
-  }
-   document.getElementById("max").onclick = setMax;
-   document.getElementById("token_balance").onclick = setMax;
-   document.getElementById("btn_deposit").className = "btn";
-   
-   var amount = document.getElementById("amout_deposit").value;
-   if (amount > token_balance){
-     document.getElementById("btn_deposit").disabled = true;
-     document.getElementById("btn_deposit").className = "btn_n";
-     document.getElementById("btn_deposit").innerHTML = "Недостаточно средств";
-
-   } 
-  }
-}
-
-//  async function getEurtInBgnt() {
-
-//   const options = { chain: 'matic', address: "0x25555d94b299f373037bffB68bDd322E21A806Ef"}
-//   const balances = await Moralis.Web3API.account.getTokenBalances(options);
-//   console.log(balances)
- 
-//   token_meta = balances.find(item => item.token_address == "0x7bdf330f423ea880ff95fc41a280fd5ecfd3d09f");
-//   console.log(token_meta)
-//   if (token_meta ==  undefined ){
-//     document.getElementById("eurt_bgnt").innerHTML = "0.00"; 
-  
- 
-//   }else{
-//    let token_balance = token_meta.balance / (10 ** token_meta.decimals)
-//    document.getElementById("eurt_bgnt").innerHTML = token_balance.toFixed(2)+ ' EURT Заключени в смартконтракта за момента'
-//  }
-// }
-
-
-async function depositUsdToken() {
-  try {
-  document.getElementById("btn_deposit").innerHTML = "";
-  document.getElementById("btn_deposit").className = "loader";
-  document.getElementById("btn_deposit").disabled = true;
-
-
-  var amount = document.getElementById("amout_deposit").value;
-  // var amout_rew = (amount / 1.95583).toFixed(6);
-  const ABI = [{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_amount",
-				"type": "uint256"
-			}
-		],
-		"name": "depositUsdt",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_amount",
-				"type": "uint256"
-			}
-		],
-		"name": "depositDai",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_amount",
-				"type": "uint256"
-			}
-		],
-		"name": "depositUsdc",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-      ];  
- const options = {
-  contractAddress: addressSale,
-  functionName: functionNameDeposit,
-  abi: ABI,
-  params: {
-    _amount: Moralis.Units.Token(amount, token_meta.decimals)
-     },
-  };
- // 0x8Dcb65b333C35f8CFf2F7330F19E933ba0492EE9
-  const receipt = await Moralis.executeFunction(options);
-  //  console.log(receipt)
-  document.getElementById("btn_deposit").className = "btn";
-  document.getElementById("btn_deposit").innerHTML = "Tранзакция отправлена";
-  document.getElementById("btn_deposit").disabled = true;
-  getTokenBalance();
-  }catch (error) {
-    console.log(error);
-    document.getElementById("btn_deposit").className = "btn";
-    document.getElementById("btn_deposit").innerHTML = "Купить REW";
-    document.getElementById("btn_deposit").disabled = false;
-    getTokenBalance();
-  }
-}
-
-async function approveTokenGoerli() {
-  try { 
-  document.getElementById("btn_deposit").innerHTML = "";
-  document.getElementById("btn_deposit").className = "loader";
-  document.getElementById("btn_deposit").disabled = true;
-
-  var amount = document.getElementById("amout_deposit").value;
-
-  const ABI = [
-    {
-      "constant": false,
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "spender",
-          "type": "address"
-        },
-        {
-          "internalType": "uint256",
-          "name": "amount",
-          "type": "uint256"
-        }
-      ],
-      "name": "approve",
-      "outputs": [
-        {
-          "internalType": "bool",
-          "name": "",
-          "type": "bool"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-  ];
-
-
-  const options = {
-  contractAddress: selectedUsd,
-  functionName: "approve",
-  abi: ABI,
-  params: {
-    spender: addressSale,
-    amount: Moralis.Units.Token(amount, token_meta.decimals)
     
-  },
- };
-   const receipt = await Moralis.executeFunction(options);
-   document.getElementById("btn_deposit").className = "btn";
-   document.getElementById("btn_deposit").onclick = depositUsdToken;
-   document.getElementById("btn_deposit").innerHTML = "Купить REW";
-   document.getElementById("btn_deposit").disabled = false;
 
-  } catch (error) {
-    console.log(error);
-    document.getElementById("btn_deposit").className = "btn";
-   document.getElementById("btn_deposit").onclick = approveTokenGoerli;
-   document.getElementById("btn_deposit").innerHTML = "Разрешить";
-   document.getElementById("btn_deposit").disabled = false;
-   }
-}
+</section>
 
-// async function openAddress(){
-//   let  receiver = document.getElementById("receiver").value;
-//   window.open('https://polygonscan.com/address/'+ receiver);
-// }
+<!-- home section ends -->
 
-// document.getElementById('amount_bgnt_sand').addEventListener("keyup", function (evt) {
+
+<!-- about section starts  -->
+
+<section class="about" style="background-color: white; text-align: center;">
+
+    <img src="images/_tablc.png"  alt="" style="width: 90%; height: 100%; margin: 3rem; " >
+    <a  class="btn" id="open-button">Купить REW</a>
+    <!-- <h1 class="heading">Что такое REW ? <img style="width: 6rem; position: absolute; display: inline-block;" src="images/REW.png" alt=""></h1>
+
+<div class="row">
+        
+    <div class="image" style="margin-right: 50px;">
+
+        <img  src="images/TH_.png" alt="">
+    </div>    
+    <div class="content" style="margin-left: 20px;">
+        <p style="font-weight: bold;">РЕВОЛЮЦИОННЫЙ ВЕКСЕЛЬ</p>
+        <p>  Токент РЕВОЛЮЦИОННЫЙ ВЕКСЕЛЬ от франц. RÉVOLUTIONNAIRE от нем. WECHSEL аббревиатура PEB или REW – токен формата ERC20 на блокчейне Ethereum (Эфириум).  
+            PEB, REW токен - ценная, взаимозаменяемая единица учёта, представляющая цифровой баланс в доле национальных активов России в настоящее и будущее время.  
+            <p>  RÉVOLUTIONNAIRE WECHSEL является инструментом привлечения игроков, единомышленников, сподвижников и соратников, готовых оказать посильную помощь движению, и тем ускорить свержение существующего государственного строя, сформированного военным преступником Владимиром Владимировичем путиным, его соучастниками.
+            По свершению революции, на начальном этапе формирования системы правления «НАРОДОВЛАСТИЕ» все желающие держатели токенов РЕВ могут свободно совершить обмен на фиат Доллар США, Евро, либо криптовалюту. </p>
+            <p>  Целью РЕВОЛЮЦИОННОГО ВЕКСЕЛЯ является использование токена в качестве фиксации долговых обязательств России, в лице нового президента России Вячеслава Вячеславовича Мальцева, обязательств, именно перед держателями, внесшими вклад в проект, без риска раскрытия личности и местонахождения. Все те, кто оказывает финансовую поддержку и поступки, привносящие прогресс в деле революционного движения в сети интернет и/или в реальном мире, пропагандируя идеи народовластия, борясь с существующим режимом, так же будут получать REW из фонда организации предназначенного для вознаграждений. Все, кто на данном, предреволюционном этапе, понял, поверил и увидел перспективу, все те, кто финансово, либо физически совершил поступок по спасению России, без оговорок, является её сыном или дочерью, достоин многократной компенсации своих вкладов и/или поступков.</p>
+            <p>  Другой но не менее важной целью REW является использование его в качестве долговых обязательств перед людьми внесшими вклад в успех революции, их идентификация без риска раскрытия личности и местонахождения. Все кто вносит вклад в революцию, на просторах интернета или в реальном мире пропагандируя идеи народовластия, или борясь с путинским режимом, так же будут получать REW из фонда организации предназначенного для вознаграждений.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit rerum excepturi alias quas voluptatibus provident voluptatum sapiente quos enim praesentium?</p>
+        <div class="buttons">
+            <a href="#"><img src="images/google-btn.png" alt=""></a>
+            <a href="#"><img src="images/app-store-btn.png" alt=""></a>
+        
+        </div>
+    </div>
+
+</div> -->
+
+</section>
+
+<!-- about section ends -->
+<!-- pricing section starts  -->
+
+<!-- <section class="pricing" id="pricing_" style="background-color: white;">
+
+    <h1 class="heading">Этапы продаж</h1>
+
+    <div class="box-container">
+          <div class="box box_" >
+              <h3 >Раунд 1</h3>
+            <div class="price"><span>$</span>1-10<span>REW</span></div>
+            <ul>
+                <li>Максимально 1 500 000 000 REW</li>
+                <li>Старт 14:00 UTC 01 июля 2022г.</li>
+                <li>Окончание 23:59 UTC 31 декабря 2022г.</li>
+                <li>Методы финансирования<h4> USDT, USDC, DAI, BUSD</h4> </li>
+            </ul>
+            <a id="openbtn" onclick="openBtn()"  class="btn">Купить REW</a>
+        </div>
+        <div class="box" >
+            <h3 style="background: var(--gradientt) ;">Раунд 2</h3>
+            <div class="price"><span>$</span>1-5<span>REW</span></div>
+            <ul>
+                <li>Все что останется после Раунда 1</li>
+                <li>Старт 14:00 UTC 01 января 2023г.</li>
+                <li>Окончание 23:59 UTC 30 июня 2023г.</li>
+                <li>Методы финансирования<h4> USDT, USDC, DAI, BUSD</h4> </li>
+            </ul>
+            <a  class="btn_n" disabled="true" >Не активно</a>
+        </div>
+        <div class="box" >
+            <h3 style="background: var(--gradientt);" >Раунд 3</h3>
+            <div class="price"><span>$</span>1-2<span>REW</span></div>
+            <ul>
+                <li>Все что останется после Раунда 2</li>
+                <li>Старт 14:00 UTC 01 июля 2023г.</li>
+                <li>Окончание 23:59 UTC 31 декабря 2023г.</li>
+                <li>Методы финансирования<h4> USDT, USDC, DAI, BUSD</h4> </li>
+            </ul>
+            <a  class="btn_n" disabled="true">не активна</a>
+        </div>
+  </div> 
+</section> -->
+
+<!-- pricing section ends -->
+
+<!-- usage section starts  -->
+
+<!-- <section class="usage"  style="background-color: white;" > -->
+
+    <!-- <h1 class="heading">Программа Народовластия</h1>
+    <div class="row">
+
+        <div class="box-container">
+            <div class="box">
+                <i class="fa-regular fa-book-open-cover"></i>
+                                <h3>Внутренняя политика</h3>
+                <p>Восстановление конституционного режима на всей территории РФ. Отмена всех Антиконституционных законов и постановлений.
+                </p>
+                <p>Передача большей части полномочий местному самоуправлению.
+                </p>
+                
+            </div>
+            <div class="box">
+                <i class="fas fa-user-clock"></i>
+                <h3>Внешняя политика</h3>
+                <p>Немедленное прекращение всех агрессивных воин развязанных режимом путина.
+                </p>Подписание нового мирного договора с Украиной.
+                <p>Законодательное закрепление за каждым гражданином его доли национальных богатств.
+                </p>
+            </div>
+        </div>
+
+        <img class="divider" src="images/usage-img.png" alt="">
+
+        <div class="box-container">
+            <div class="box">
+                        
+                       <h3>Люстрация</h3>
+                <p>Предание трибуналу лиц причастных к антиконституционному захвату власти в России и многолетнему нарушению Конституции.
+                </p>
+                <p>Конфискация награбленного коррупционерами. Создание «Внешвозврат банка».
+                </p>
+                <p>Национализация незаконно преступно похищенной собственности и всех национальных богатств.
+                </p>
+            </div>
+            <div class="box">
+                <i class="fas fa-fire"></i>
+                <h3>Економика и социальная политика</h3>
+                <p>Полная экономическая амнистия для физических и юридических лиц. Прощение всех долгов по ростовщическим кредитам.
+                </p>
+                <p>Немедленное повышение пенсий и пособий в том числе и по безработице, зарплат бюджетникам до уровня развитых европейских стран (за счет конфискации похищенных у народа национальных богатств).
+                </p>
+                <p>Отмена любых налогов для граждан страны, а так же малого бизнеса.
+                </p>
+                <p>Введение электронных денег с целью предотвращения коррупции.
+                </p>
+                <p>Немедленная безвозмездная передача неиспользуемых земельных участков сельхоз назначения в личное пользование земледельцам.
+                </p>
+            </div>
+        </div>
+
+    </div> -->
+<!-- 
+</section> -->
+
+<!-- usage section ends -->
+
+
+<!-- features section starts  -->
+
+<!-- <section class="features" id="features_" style="background-color: white;">
+
+    <h1 class="heading"> <i class="fa-solid fa-hand-fist" style="margin-right:5px ;"></i>Программа Народовластия</h1>
+
+    <div class="box-container" >
+
+        <a class="box" href="#constitution" >
+           
+            <i class="fas fa-book"></i>
+            <h3>Конституция</h3>
+            <p>Восстановление конституционного режима на всей территории РФ. Отмена всех Антиконституционных законов и постановлений.
+            </p>  
+            <p>Принятие Конституционного закона о правде и открытости должностных лиц всех уровней.
+            </p>
+            <p>Установление в России прямого народовластия.
+            </p> 
+        </a>
+     
+        <a class="box"  href="#foreign_policy">
+            <i class="fas fa-globe"></i> -->
+            <!-- <i class="fas fa-shield-alt"></i> -->
+            <!-- <h3>Внешняя политика</h3>
+                <p>Немедленное прекращение всех агрессивных воин развязанных режимом путина.
+                </p>
+                <p> Подписание нового мирного договора с Украиной.</p>
+                <p>Законодательное закрепление за каждым гражданином его доли национальных богатств.
+                </p>
+                <p>Введение визового режима со странами средней Азии.
+                </p>
+            </a>
+        <a class="box" href="#lustration">
+            <i class="fa-solid fa-handcuffs"></i>            <h3>Люстрация</h3>
+            <p>Предание трибуналу лиц причастных к антиконституционному захвату власти в России и многолетнему нарушению Конституции.
+            </p>
+            <p>Конфискация награбленного коррупционерами. Создание «Внешвозврат банка».
+            </p>
+            <p>Национализация незаконно преступно похищенной собственности и всех национальных богатств.
+            </p>
+        </a>
+        <a class="box" href="#social_politics">
+            <i class="fa-solid fa-people-group"></i>
+                                    <h3>Социальная политика</h3>
+            <p>Законодательное закрепление за каждым гражданином его доли национальных богатств.
+            <p>Немедленное повышение пенсий и пособий в том числе и по безработице, зарплат бюджетникам до уровня развитых европейских стран (за счет конфискации похищенных у народа национальных богатств).
+            <p>Введение персональных выплат для лиц и семей пострадавших от преступной власти.
+           </p>
+        </a>
+<a class="box" href="#economy">
+        <i class="fa-solid fa-chart-pie"  ></i>
+                        <h3>Экономика</h3>
+                <p>Полная экономическая амнистия для физических и юридических лиц. Прощение всех долгов по ростовщическим кредитам.
+                </p>
+                 <p>Отмена любых налогов для граждан страны, а так же малого бизнеса.
+                </p>
+                <p>Введение электронных денег с целью предотвращения коррупции.
+                </p>
+                <p>Немедленная безвозмездная передача неиспользуемых земельных участков сельхоз назначения в личное пользование земледельцам.
+                </p>
+                
+            </a>
+        <a class="box" href="#politics">
+          <i class="fa-solid fa-landmark-flag"></i>
+            <h3>Внутренняя политика</h3>
+            <p>Открытая работа органов государственной власти и местного самоуправления с онлайн трансляцией в интернет всего происходящего во всех кабинетах учреждений и размещение всех рабочих документов любого органа на общедоступных интернет ресурсах. Немедленное увольнение должностных лиц за ложь, связанную с исполнением служебных обязанностей.
+            </p>
+            <p>Закон об ответственной власти устанавливающий материальную ответственность должностных лиц за принятые решения.
+            </p>   
+            <p>Введение визового режима со странами средней Азии.
+            </p>
+        </a>
+</div>
+
+</section> -->
+<!-- <button class="collapsible" id="collapsible">Open Collapsible</button>
+<div class="content_" id="content_">
+  <p>Lorem ipsum...</p>
+</div>
+<details class="collapsible">
+    <summary>What is the population of New Orleans?</summary>
+    According to 2010 Census Bureau estimates, New Orleans' population is made up of approximately 343,829 residents.
+  </details>
   
-//   var amount = document.getElementById("amount_bgnt_sand").value;
-//   if (amount > 0 ){
-//     getBalanceBgnt();
-//     onWeb3Enabled();
-//     initAddress();
-//   } 
+  <details class="collapsible">
+    <summary>What's a Po' Boy?</summary>
+    A po' boy (also po-boy, po boy) is a traditional sandwich from Louisiana. It almost always consists of meat, which is usually roast beef or fried seafood, often shrimp, crawfish, fish, oysters or crab.
+  </details>
   
-//   else {
-//     document.getElementById("sand_btn").disabled = true;
-//   }
-//  getBalanceBgnt();
-// }, false);
+  <details class="collapsible">
+    <summary class="content_">How do I get to New Orleans?</summary>
+    Use Google Maps.
+  </details> -->
+<!-- features section ends -->
 
-// async function getBalanceBgnt() {
-//   const options = { chain: 'matic'}
-//   const balances = await Moralis.Web3API.account.getTokenBalances(options);
- 
-//   bgnt_meta = balances.find(item => item.token_address == "0x25555d94b299f373037bffb68bdd322e21a806ef");
-//   if (bgnt_meta ==  undefined ){
-//   //  document.getElementById("bgnt_balance").innerHTML = "0.00"
-//   //  document.getElementById("bgnt_balance_").innerHTML = "0.00"
-//   //  document.getElementById("btn_deposit_bgnt").disabled = true;
- 
- 
-//   }else{
-//    bgnt_balance = bgnt_meta.balance / (10 ** bgnt_meta.decimals)
-//   //  document.getElementById("bgnt_balance").innerHTML = bgnt_balance.toFixed(2)+ ' BGNT'
-//   //  document.getElementById("bgnt_balance_").innerHTML = bgnt_balance.toFixed(2)+ ' BGNT'
- 
- 
-//    async function setMax () {
-//     document.getElementById("amount_bgnt_sand").value = bgnt_balance;
-//     initAddress();
- 
-//    }
-//    async function setMaxContract () {
-//     //  document.getElementById("amout_deposit_").value = bgnt_balance;
-//     //  var amount = document.getElementById("amout_deposit_").value;
-//     //  var amount_bgnt = (amount / 1.95);
-//     //  document.getElementById("convert_bgnt").innerHTML = ("≈" + amount_bgnt.toFixed(2) + " EURT");
-//     //  document.getElementById("btn_deposit_bgnt").disabled = false;
-//    }
- 
-//   //  document.getElementById("max_bgnt").onclick = setMax;
-//   //  document.getElementById("bgnt_balance").onclick = setMax;
-//   //  document.getElementById("bgnt_balance_").onclick = setMaxContract;
- 
-   
-//   //  let amount = document.getElementById("amount_bgnt_sand").value;
-//   //  let amout_deposit_=document.getElementById("amout_deposit_").value;
- 
-//   //  if (amount > bgnt_balance){
-//   //    document.getElementById("sand_btn").disabled = true;
-//   //    console.log(bgnt_balance)
-//   //    setMax();
-//   //    alert("Недостатъчен баланс");   
-//   //  } 
-//   //  if (amout_deposit_ > bgnt_balance){
-//   //    // document.getElementById("sand_btn").disabled = true;
-//   //    setMaxContract();
-//   //    alert("Недостатъчен баланс"); 
-//   //  } 
-//   }
-// }
+<!-- <div style="background-color: #272D3B; height: 100%; text-align: center;">
+				<h1 class="heading">--Вступай в наши ряды--</h1>
+				<div class="share">
+                    <a href="https://twitter.com/vvmaltsev" target="_blank" class="fab fa-twitter"></a>
+                    <a href="https://t.me/maltsev_chat" target="_blank" class="fa-solid fa-comment"></a>
+                    <a href="https://t.me/revolutionmaltsev" target="_blank" class="fab fa-telegram"></a>
+                    <a href="https://www.youtube.com/c/%D0%9D%D0%90%D0%A0%D0%9E%D0%94%D0%9E%D0%92%D0%9B%D0%90%D0%A1%D0%A2%D0%98%D0%95%D0%92%D0%AF%D0%A7%D0%95%D0%A1%D0%9B%D0%90%D0%92%D0%9C%D0%90%D0%9B%D0%AC%D0%A6%D0%95%D0%92" target="_blank" class="fab fa-youtube"></a>
+                    <a href="https://www.youtube.com/c/ARTPODGOTOVKA" target="_blank" class="fa-brands fa-youtube-square"></a>
+                </div>
+			</div> -->
 
-// async function copyAddress() {
-//   var str = Moralis.User.current().get('ethAddress');
-//   // Create new element
-//   var el = document.createElement('textarea');
-//   // Set value (string to be copied)
-//   el.value = str;
-//   // Set non-editable to avoid focus and move outside of view
-//   el.setAttribute('readonly', '');
-//   el.style = {position: 'absolute', left: '-9999px'};
-//   document.body.appendChild(el);
-//   // Select text inside element
-//   el.select();
-//   // Copy text to clipboard
-//   document.execCommand('copy');
-//   // Remove temporary element
-//   document.body.removeChild(el);
-//     var toastElList = [].slice.call(document.querySelectorAll('.toast'))
-//     var toastList = toastElList.map(function(toastEl) {
-//       return new bootstrap.Toast(toastEl)
-//     })
-//     toastList.forEach(toast => toast.show()) 
-// //   var toastElList = [].slice.call(document.querySelectorAll('.toast'))
-// //   var toastList = toastElList.map(function (toastEl) {
-// //  return new bootstrap.Toast(toastEl)
-// //  });
-// //  document.getElementById("toast_copy_address").toast('show');
-// }
+<!-- review section starts  -->
 
-async function logOut() {
-  await Moralis.User.logOut();
-  console.log("logged out");
-  // document.getElementById("btn-logout").style.display = "none";
-  // document.getElementById("user_chip").style.display = "none";
-  // document.getElementById("btn-login").style.display = "block";
-  //       document.getElementById("btn-auth").style.display = "block";
-  //       document.getElementById("connect_wallet").style.display = "block";
-  //       document.getElementById("_address_").style.display = "none";
-  //       document.getElementById("currentNetwork").style.display = "none";
-  //       document.getElementById('address_wollett').innerHTML = "💳";
-        getAddress();
+<!-- <section class="review" style="background-color: white; text-align: center;">
 
-  try {
-    await Moralis.User.logOut();
-  } catch (error) {
-    console.log('logOut failed', error);
-  }
-  result = '';
-  renderApp();
-  
-}
+    <h1 class="heading">Программа Народовластия</h1>
+
+    <button class="accordion"><i class="fa-solid fa-people-line" style="margin: 5px;" id="politics"></i>1 Создание системы народовластия:
+    </button>
+    <div class="panel" >
+      <p>  1.1 Общество всеобщей открытости не имеет права посягать на частную жизнь граждан. Чиновник же должен работать в максимально открытой обстановке. Необходимо немедленно ввести условия для обеспечения открытости власти на законодательном уровне. Принцип открытости власти должен стать основным в деятельности государственных чиновников.
+    </p>
+        <p>  1.2 Все кабинеты чиновников будут оборудованы видеокамерами, все действия чиновников, деятельность которых не связана с государственной тайной, будут доступны в режиме онлайн гражданам государства как в виде видеотрансляции, так и в документальном виде.
+        </p>
+       <p>  1.3 Все претенденты на государственные должности должны будут дать развернутое интервью по определенному перечню вопросов.
+        </p>
+       <p>  1.4 Гражданам должна быть доступной информация о чиновниках, членах их семей, имуществе чиновника и членов их семей, результативность и само содержание деятельности чиновника.
+        </p>
+        <p>  1.5 Психиатрическая, наркологическая экспертиза претендентов на высокие государственные должности будет обязательной процедурой, как и периодическое прохождение психологического и наркологического тестирования с публикацией данных в интернет-контенте. Также будет установлена периодичность обязательного прохождения опроса с применением полиграфа.
+        </p>  
+        <p>  1.6 Чиновники любого ранга не будут иметь права решать рабочие вопросы вне рабочего места и за пределами рабочего времени. В случае фиксации таких случаев чиновник должен незамедлительно подать в отставку без права когда-либо занимать государственную должность или с возможностью занятия таковой, по прошествии определенного времени в зависимости от тяжести совершенных нарушений. 
+       
+        </p>  1.7 Граждане будут иметь доступ к решению всех вопросов, регламентирующих их жизнедеятельность, на муниципальном уровне путем референдумов, опросов. Все международные договоренности будут открытыми для граждан, никаких тайных для граждан страны переговоров правительство вести не имеет права.
+        <p>  1.8 Все средства связи будут национализированы, доступ к интернету для всех граждан будет бесплатным и гарантированным. Весь документооборот чиновников будет доступным гражданам.
+       </p> 
+        <p>  1.9 Все судьи, прокуроры, начальники муниципальных полиций, значимые руководители муниципальных органов власти будут избираемы, а не назначаемы.
+       </p>
+       <p>  1.10 По окончанию полномочий выборного должностного лица в обязательном порядке предоставляется постоянный отчет о деятельности. При получении неудовлетворительной оценки деятельности от граждан ему будет запрещено избираться на государственные должности на срок, на котором пребывал в должности. Мониторинг деятельности чиновника будет вестись в настоящем времени на постоянной основе с установленной периодической отчетностью во время срока исполнения обязательств.
+       </p>
+       <p>  1.11 Ректоры ВУЗов, директора школ и колледжей будут избираться преподавательским составом (и, в случае школ, родительским комитетом) на срок 2 года. В случае успешного выполнения обязанностей допускается переизбрание на повторные сроки.
+        </p>
+    </div>
+    
+    <button class="accordion"><i class="fa-solid fa-hands-bound" style="margin-right: 5px;" id="lustration"></i>2 Люстрации:
+    </button>
+    <div class="panel">
+      <p>  2.2 Проведение научного анализа и широкого общественного обсуждения причин, условий и последствий узурпации власти режимом Путина
+    </p>
+    <p>  2.3 Организация открытого опроса претендентов на замещение должностей во власти. (Все открыто, в интернете, вебкамеры -раз мы позиционируем открытое общество-, человеку задаются вопросы по литературе, по истории, те же самые тесты, их нельзя будет забить просто в голову и запомнить. Элементарные вопросы, чтобы люди знали, кого они выбирают. )
+    </p>
+    <p>  2.4 Введение оценки работы и аттестации судей общественными комитетами по результатам их деятельности.
+    </p>
+    <p>  2.5 Все госорганы прежнего режима, имевшие право на насилие и/или распоряжающиеся имуществом, объявляются преступными организациями. На их сотрудников не распространяется презумпция невиновности. Эти лица должны будут доказать свою непричастность к преступлениям режима, и только тогда они могут быть реабилитированы.
+    </p>
+    <p>  2.6 Осуществление всех необходимых действий по возвращению в страну денег, украденных чиновниками и их аффилированными структурами. (Для чего будут также  объявлены не вернувшие деньги должностные лица, приватизаторы и их наследники должниками русского народа на международном уровне с вытекающими последствиями.)
+    </p>
+    <p>  2.7 Создание Внешвозвратбанка (ВВБ), который занимается возвращением в страну выведенных за пределы страны   средств, приобретенных незаконным путем.
+    </p>
+    <p>  2.8 В случае добровольного возврата, лица незаконно владеющие такими средствами, реабилитируется и уголовные дела против них прекращаются.
+    </p>
+    <p>  2.9 Введение квоты для служащих, пропорционально национальному представительству в правоохранительных органах, в том числе по должностям.
+    </p>
+    <p>  2.10 Введение принципа  материальной ответственности чиновников за принятые (или непринятые, вопреки законной необходимости) решения. Все решения чиновников, прямо или косвенно повлекшие материальный или иной ущерб для юридических или частных лиц, нарушение прав собственности, ущерб здоровью - должны иметь соответствующие материальные   и процессуальные последствия.
+    </p>
+    <p>(Аналогичные принципы материальной ответственности разработать для работников силовых и правоохранительных органов: граждане и юридические лица должны иметь право на компенсацию убытков в случае, если они понесли ущерб в результате  неправомерных действий сотрудников этих структур.)
+    </p>
+    <p>  2.11 Введение обязательной процедуры ежеквартальной, полугодовой и годовой отчетности государственных органов и органов местного самоуправления о целевом расходовании бюджетных и внебюджетных средств перед общественными комитетами соответствующего уровня с обязательным опубликованием их в СМИ.
+    </p>
+    <p>  2.12 Введение процедуры досрочного прекращения полномочий избранных органов государственной власти и должностных лиц за ненадлежащее выполнение (невыполнение) ими своих должностных обязанностей путем открытого всенародного голосования.
+    </p>
+    <p>  2.13 Осуществление необходимых действия по возврату ранее уехавших преступников в соответствии с международным законодательством.
+    </p>
+
+    </div>
+    
+    <button class="accordion"><i class="fa-solid fa-landmark-flag" style="margin-right: 5px;"></i>3 Муниципалитеты:
+    </button>
+    <div class="panel">
+      <p>3.1 Выборочные ответственные муниципальные должности с правом немедленного отзыва.
+    </p>
+    <p>3.2 Отсутствие управляющих компаний (муниципалитеты должны работать на прямую).
+    </p>
+    <p>3.3 Гарантированная зарплата, и добровольный премиальный фонд сверх прибыли за счет пожертвований граждан.
+    </p>
+    <p>3.4 Приоритет муниципалитетов на строительство домов, хуторов, деревень. Ипотека без процентов.
+    </p>
+    <p>3.5 Создание открытого земельного кадастра. Электронная муниципальная карта.
+    </p>
+    <p>3.6 Создание паспортов по муниципалитетам с расчетом антропогенной нагрузки.
+    </p>
+    </div>
+    <button class="accordion"><i class="fa-solid fa-users-rectangle" style="margin-right: 5px;"></i>4 СМИ:
+    </button>
+    <div class="panel">
+      <p>  4.1 Разработать и принять адекватное современное законодательство об Интернете, обеспечивающее свободу слова и политического волеизъявления (вплоть до голосования) граждан в электронных средах.
+    </p>
+    <p>  4.2 Сделать Интернет основной и обязательной формой отчётности государства перед народом по примеру 94ФЗ. Это позволит сократить затраты на публикацию отчётности и сохранить уникальную природу нашей страны за счёт избавления от бумажных носителей.
+    </p>
+    <p>  4.3 Добиться внесения права на свободу в Интернете в список конституционных прав граждан.
+    </p>
+    <p>  4.4 Ввести обязательное народное обсуждение текущих законопроектов для повышения прозрачности законотворческой деятельности и повышения престижа законной власти вообще, стимулирования развития гражданского общества.
+    </p>
+    <p>  4.5Реализовать проект «Электронная Россия», скорректировав его в соответствии с современными реалиями.
+    </p>
+    <p>  4.6 Добиться повсеместного распространения быстрого Интернета для ускорения роста экономики, формирования гражданского общества, индустрии удалённой разработки, укрепления общественных связей.
+    </p>
+    <p>  4.7 Разработать план мероприятий по расширению присутствия государственного аппарата в сети и повышению прозрачности его работы.
+    </p>
+    <p>  4.8 Создать единую платформу принятия и обработки заявлений граждан через Интернет на основе Портала Госуслуг и системы «одно окно», контактных центров различных федеральных, региональных и муниципальных властей и ведомств.
+    </p>
+    <p>  4.9 Сформировать Интернет-общественную палату для контроля деятельности госорганов и внесения инициатив граждан.
+    </p>
+    <p>  4.10 Сделать Интернет-порталы удобными для граждан с ограниченными возможностями.
+    </p>
+    <p>  4.11 Сделать дешевым и доступным высокоскоростной Интернет в каждой точке страны.
+    </p>
+    <p>  4.12 Обычная, наземная почта для транспортировки физических объектов, должна быть тотально реформирована и доведена до уровня развитых стран, наряду с дальнейшим развитием частных почтовых компаний — прежде всего с вытекающей таможенной реформой.
+    </p>
+    <p>  4.13 Создание Государственного Интернет-портала с теле, текстовой, фото-информацией о нашей стране — «Энциклопедия России».
+    </p>
+    <p>  4.14 Создание самостоятельных патриотических государственных СМИ и площадки для взаимодействия с гражданами.
+    </p>
+    <p>  4.15 Запрещение операторам сотовой связи и интернет провайдерам сотрудничать со спецслужбами и разглашать персональные данные пользователей (только по решению суда). В случае выявления фактов данного запрета лишать таких операторов лицензии на вещание.
+    </p>
+    <p>  4.16 Запрет государственным и муниципальным органам, государственным и муниципальным или с долей государственного и муниципального участия предприятиям, учреждениям и организациям быть учредителями или собственниками печатных, телевизионных, радиовещательных и электронных СМИ, кроме официальных изданий, предназначенных исключительно для публикации их собственных решений и правовых актов.
+    </p>
+    <p>  4.17 Ужесточение ответственности за вмешательство в независимую деятельность СМИ и осуществление цензурных функций.
+    </p>
+    <p>  4.18 Обеспечение информирования граждан о проведения массовых публичных акций.
+    </p>
+    <p>  4.19 Восстановление полноценного доступа СМИ к информации. Принятие нового закона о гарантиях доступа граждан к информации о деятельности органов власти и должностных лиц, ответственности за воспрепятствование доступа к ней – административной и уголовной в случаях, связанных с опасностью для жизней людей.
+    </p>
+    <p>  4.20 Внесение в Уголовный кодекс РФ статьи об ответственности СМИ за сокрытие или искажение информации о реальном положении дел в стране. За введение в заблуждение о проводимых реформах и их последствиях.
+    </p>
+    <p>  4.21 Пропаганда здорового образа жизни в средствах массовой информации, видеофильмы, социальную рекламу и телевизионные передачи.
+    </p>
+    <p>  4.22 Запрет рекламы Алкоголя, а также Сигарет и других вредных веществ.
+    </p>
+    </div>
+    <button class="accordion"><i class="fa-solid fa-money-bill-trend-up" style="margin-right: 5px;" id="economy" ></i>5 Финансовая система:
+
+    </button>
+    <div class="panel">
+        <p>  5.1 Поддержание национальной валюты - рубля,  в т.ч. электронного рубля - это задача Национального Банка Российской Федерации.
+        </p>
+        <p>  5.2 Главой Национального Банка РФ может быть только гражданин РФ, проживший в РФ не менее последних 5 лет с момента назначения на пост Главы НацБанка РФ. который на момент назначения на должность проживал в стране не менее 5-10 лет постоянно;
+        </p>
+        <p>    5.2.1 Глава НацБанка не должен иметь другого гражданства кроме российского;
+        </p>
+        <p>    5.2.2 Глава НацБанка РФ не должен иметь денежные активы, недвижимость и за пределами РФ;
+        </p>
+        <p>  5.2.3 Глава НацБанка РФ должен иметь высшее экономическое образование и стаж работы в экономических структурах РФ не менее 7 лет.
+        </p>
+        <p>  5.3 Будут пересмотрены (отменены) проценты при предоставлении кредитов, некоторые виды кредитов (на жилье, образование) не должны вообще выдаваться под процент.
+        </p>
+        <p>  5.4 При изменении налоговой системы будет введен мораторий на внесение каких либо изменений сроком на 10 лет.
+        </p>
+        <p>  5.5 Все налоги ( в том числе подоходные ) в России упраздняются. Бизнесы платят только фиксированные сборы за  ведение деятельности ( деловая пошлина ).
+        </p>
+        <p>  5.6 Обнуление долгов граждан Российской Федерации (по ЖКХ и прочим налогам и сборам в различные фонды РФ), Кредитная амнистия всех должников Российской Федерации перед банками РФ.
+        </p>
+        <p>  5.7 Будет установлен нижний предел заработной платы, исходя из величины социального стандарта потребления, как минимальную почасовую ставку с тремя видами повышающих коэффициентов: региональным, отраслевым, квалификационным.
+        </p>
+        <p>  5.8 Повысить оплату труда бюджетникам (врачам, учителям, ученым, работникам культуры), ликвидировать разрыв в оплате труда и обеспечении социальными гарантиями между ними и госчиновниками.
+        </p>
+      
+    </div>
+    <button class="accordion" ><i class="fa-solid fa-user-doctor" style="margin-right: 5px;"></i>6 Медицина:
+
+    </button>
+    <div class="panel">
+       <h3>«У нас проблемы медицины в том, что у нас нет медицины»;
+        «Прогресс в медицине, это прогресс во всех областях человеческой деятельности; Движется медицина – движется все.»
+        </h3>
+        <p>  6.1 Создание современной системы неотложной скорой помощи.
+        </p>
+        <p>  6.2 Создание современную систему медицинской помощи, ориентированной на оказание качественной медицинской помощи на уровне мировых стандартов. 
+        </p>
+        <p>  6.2.1 Обучение медицинских работников за рубежом в лучших медицинских учебных заведениях за счет государства.
+        </p>
+        <p>  6.3 Обеспечение высокого уровня заработных плат в медицине. (Государственная медицина должна финансироваться в первую очередь и иметь достаточное развитие и финансирование, не  допускать альтернативы частных медицинских заведений в ущерб развития государственных.)
+        </p>
+        <p>  6.4 Пересмотр норм СанПиН.
+        </p>
+        <p>  6.5 Отмена расширения полномочий органов Роспотребнадзора.
+        </p>
+        <p>  6.6 Создание и развитие комплексных медицинских центров, оснащенных современным оборудованием в соответствии с мировыми стандартами.
+        </p>
+        <p>  6.7 Возрождение системы фельдшерско-акушерских пунктов в сельской местности.
+        </p>
+        <p>  6.8 Пересмотр образовательных программ медицинских ВУЗов и колледжей.
+        </p>
+        <p>  6.9 Проведение аттестации желающих продолжать работать в сфере медицины.
+        </p>
+        <p>  6.10 Платное медицинское обслуживание, в рамках государственных дотаций (чтобы человеку хватало на лечение). Помощь государства.
+        </p>
+        <p>  6.11 Проверка условий функционирования частных больниц.
+        </p>
+        <p>  6.12 Предоставление государственной поддержки частной врачебной практике (обеспечение соблюдения процедуры выдачи лицензий) и предоставление возможности гражданам получать медицинскую помощь в частных кабинетах. 6.12.1 Врачи при этом должны обладать всеми теми же правами и необходимыми полномочиями, что и врачи поликлиник (ведение беременности и выдача документов для род. дома, оформление листов нетрудоспособности, направление в стационары).
+        </p>
+        <p>  6.13 Создание и расширение сети выездных и патронажных служб по уходу за паллиативными пациентами, инвалидами, престарелыми гражданами, проживающими без опеки родственников и имеющих тяжелые заболевания.
+        </p>
+        <p>  6.14 Создание государственной поддержки социальных инициатив по уходу за лежачими пациентами (развитие института медицинского опекунства в России, можно взять за основу опыт сестер милосердия).
+        </p>
+        <p>  6.16 Разработка и внедрение программ добровольческой работы лицами БОМЖ (передвижные пункты оказания первой медицинской помощи).
+        </p>
+        <p>  6.17 Открытие пунктов оказания комплексной помощи несовершеннолетним беременным и жертвам насилия.
+        </p>
+        <p>  6.18 Совершенствование системы, в которой на все медицинские манипуляции и процедуры требуется информированное соглашение пациента.
+        </p>
+        <p>    6.18.1 Принуждение пациента к получению медицинских услуг, осмотров и лечения строго преследуется (кроме случаев социально-опасных психических, инфекционных и  венерических заболеваний!).
+        </p>
+        <p>    6.18.2 Признание прав пациента распоряжаться своим телом, здоровьем, жизнью.
+        </p>
+        <p>    6.18.3 В тех случаях, когда родители, законные представители несовершеннолетнего  ребенка, находящегося в тяжелом состоянии  принимают решение, представляющее угрозу его жизни/здоровью (отказ от переливания крови, хирургическое вмешательство, введение препаратов по религиозным мотивам, например) врач в первую очередь обязан руководствоваться необходимостью спасти жизнь ребенку.
+        </p>
+        <p>  6.19 Право пациента получить на руки любые документы, касающиеся его здоровья по первому требованию.
+        </p>
+        <p>  6.20 Рассмотрение случаев нарушения врачебной этики обязательно внутри учреждений, неоднократные нарушения выносятся на “внешнюю” дисциплинарную комиссию и по итогам проверки сотрудник может быть отстранен от работы без права работать в сфере здравоохранения.
+        </p>
+        <p>  6.21.Обязательство всех медицинских организаций и частных врачей оказывать медицинскую помощь в случаях острой боли незамедлительно.
+        </p>
+        <p>    6.21.1 Предоставление права посещения родственниками пациентов в очень тяжелом состоянии (после предварительной беседы с клиническим психологом), независимо от возраста пациентов. Процедура посещения может быть регламентирована во времени.
+        </p>
+        <p>  6.22 Возвращение в Уголовный Кодекс РФ статью за неоказание медицинской помощи.
+        </p>
+        <p>  6.23 Предоставление  лекарств паллиативным больным и инвалидам первой группы с минимальными бюрократическими процедурами.
+        </p>
+        <p>  6.23.1 Все лекарственные средства, поступающие в аптеки и стационары будут проверяться на подлинность и безопасность (несколько препаратов из партии на экспертизу).
+        </p>
+        <p>  6.24 Развитие сети геронтологических центров в России (значительно сократится время на получение медицинской помощи в поликлиниках для работающих и учащихся, людей трудоспособного возраста - с одной стороны, а с другой - врачи-геронтологи лучше знают специфику изменений в состоянии здоровья пожилых людей).
+        </p>
+        <p>    6.24.1 Развитие сети педиатрических Центров Здоровья для мониторинга развития детей (все профилактические и плановые осмотры детей, прививки - там, а не в поликлиниках , где больные и здоровые дети сейчас сидят по много времени в одних коридорах). В случае проблем со здоровьем - в центрах дают направление в поликлиники и больницы на обследование, лечение и т.д.
+        </p>
+        <p>  6.25 Оказание государственной поддержки народной медицине и массовому изучению в системе самообразования человеческого организма и его возможностей.
+        </p>
+    </div>
+    <button class="accordion"><i class="fa-solid fa-graduation-cap" style="margin-right: 5px;"></i>7 Образование:
+    </button>
+    <div class="panel">
+        <p>7.1 Увеличение приоритета на развитие системы образования, науки и педагогики.
+        </p>
+      <p>7.2 Финансирование, контроль за расхищением финансов, и нормальный моральный климат.
+    </p>
+      <p>7.3 По истечению предоставленного срока амнистии проведение ревизии всех научных работ, защищенных в период правления предыдущей власти  и люстрацию тех владельцев научных степеней, диссертации которых признаны недействительными.
+    </p>
+      <p>7.4 Детям с особыми образовательными потребностями (сюда входят не только дети ОВ, но и одаренные дети)  предоставление на выбор различных формы обучения (индивидуальное, домашнее обучение или обучение в специализированных заведениях.
+    </p>
+      <p>7.5 Возвращение классической модели обучения, нацеленную на развитие мышления, речи, памяти, логики, а не решению тестовых заданий в классы с 1 по 9, далее западная модель обучения (защита индивидуальных проектов, наполнение модулями индивидуального плана обучения. Но экзамены на аттестат зрелости в классическом варианте (билеты устно и письменно) Плюс защита проекта.
+    </p>
+      <p>7.5.1 Образовательный процесс в школе будет ориентирован на соблюдение принципов здорового образа жизни.
+    </p>
+      <p>7.5.2 Обеспечение спортивным инвентарем всех школ страны.
+    </p>
+      <p>7.5.3 Поступление в ВУЗ осуществляется на основании успешно сданных вступительных экзаменов (устных и письменных).
+    </p>
+      <p>7.5.4 Программы ВУЗов будут соответствовать мировым стандартам по специальностям.
+    </p>
+      <p>7.6 Создание экспертного совета при РАН, по каждому направлению жизни общества, в составе лучших специалистов в каждой области (возможно, на выборной основе), для проведения постоянного мониторинга работы профильных министерств, с регулярной публичной оценкой их деятельности. А также для корректировки их работы и внесения соответствующих инициатив, в том числе, законодательных.
+    </p>
+      <p>7.7 Финансирование за счет государства спортивных секций, как для детей, так и для взрослых.
+    </p>
+    
+    </div>
+    <button class="accordion"><i class="fa-solid fa-globe" style="margin-right: 5px;"></i>8 Культура:
+    </button>
+    <div class="panel">
+        <h3>«Русская культура имеет глубокие и крепкие корни, главное не поливать их Путинским дерьмом.»</h3>
+      <p>8.1 Отделение шоу-бизнеса от государства. (С федеральных ТВ-каналов убрать программы подрывающие нравственность и не несущие смысловой нагрузки. Демонстрировать эти программы по частным каналам.)
+    </p>
+      <p>8.2 Возвращение в страну всех незаконно вывезенных исторически значимых музейных экспонатов, картин, предметов старины и документов.
+    </p>
+      <p>8.3 Поддержка культурных и общественных организаций.
+    </p>
+      <p>8.4 Создание и оформление этикета, для изучения в школах и высших учебных заведениях.
+    </p>
+      <p>8.5 Создание за рубежом тематических русских культурных центров, музеев (одного события или одного человека).
+    </p>
+      <p>8.6 Привлечение интернет авторитетов для продвижения русской интернет культуры, лозунги новой киберкультуры «Честность, открытость, информированность и участие».
+    </p>
+      <p>8.7 Создание независимого профсоюза работников киберпространства.
+    </p>
+    </div>
+    <button class="accordion"><i class="fa-solid fa-jet-fighter-up" style="margin-right: 5px;"></i>9 Армия:
+    </button>
+    <div class="panel">
+      <p>9.1 Армия в России должна иметь кадрово-милиционную структуру.  После окончания прохождения службы по призыву государство отдаёт бойцу определенное количество единиц оружия с комплектами боеприпаса, формы, которые гражданин хранит по месту жительства.  Желающие стать офицерами проходят дополнительные сборы усиленной офицерской подготовки.
+    </p>
+      <p>9.2 Граждане, проходившие службу в армии и уволенные в запас и находятся в резерве, должны иметь право на хранение по месту жительства амуниции, оружия, за которое он несет ответственность, осуществляет уход и обеспечивает его хранение и функционирование.
+    </p>
+      <p>9.3 Создание новой системы призыва граждан на обязательную военную службу.
+    </p>
+    </div>
+    <button class="accordion"><i class="fa-solid fa-tractor" style="margin-right: 5px;"></i>10 Сельское хозяйство:
+    </button>
+    <div class="panel">
+      <p>10.1 Сельско-хозяйственные науки в свободной России должны стать приоритетными среди других наук до момента обеспечения продуктовой безопасности страны (не менее 90% продукции должно производится внутри страны и не закупаться за рубежом).
+    </p>
+      <p>10.2 Установление свободной продажи сельско-хозяйственной продукции любыми производителями на муниципальных рынках сельскохозяйственного производства.
+    </p>
+      <p>10.3 Устранение барьеров, искусственно созданных перекупщиками на рынках.
+    </p>
+      <p>10.4 Устранение не муниципальных рынков. (Все рынки должны быть муниципальные, где торгуют сельхоз продукцией.  Необходимая минимальная ветеринарная экспертиза – и все на продажу.)
+    </p>
+      <p>10.5 Развитие перерабатывающей промышленности за счет беспроцентных кредитов и привлечения новых технологий.
+    </p>
+      <p>10.6 Резервирование топлива с натуральной оплатой после урожая, то есть государство выдает топливо селянам для сельхозработ, это также гарантирует долю, приобретаемую государством в оплату за топливо и горюче-смазочные материалы.
+    </p>
+      <p> 10.7 Передача сельскохозяйственной техники с разумной отсрочкой платежа.
+    </p>
+      <p>10.8 Обязательное создание системы гос.закупок по фиксированной цене по крайней мере на первое время после прихода к власти, поскольку сельское хозяйство сегодня находится в состоянии упадка. А с другой стороны это позволит нам защитить фермеров от падения цен на сельхозпродукцию и дать им возможность прокормить семью.
+    </p>
+      <p>10.9 Безвозмездная передача земельных участков сельскохозяйственного назначения в личное пользование тем гражданам, кто на них непосредственно трудится. (Сады, огороды должны быть переданы в собственность без оплаты государству).
+    </p>
+      <p>10.10 Стимулирование переезда в сельскую местность и создание развитой инфраструктуры на селе, разумеется с интернетом.
+    </p>
+      <p>10.11 Бесплатное обучение всем сельскохозяйственным специальностям с обязательной приличной стипендией (средние специальные и высшие учебные заведения).
+    </p>
+      <p>10.12 В сельскохозяйственных ВУЗах  должны быть профессии предназначенные подготовить человека к работе в земледелии, ветеринарии и прочие специальности, ориентированные непосредственно на работу в сельском хозяйстве.
+    </p>
+      <p>10.13 Создание крупных государственных высокотехнологичных сельхозпредприятий для обеспечения продовольственной безопасности страны и разработки и испытания новых наукоёмких технологических решений.
+    </p>
+    </div>
+    <button class="accordion"><i class="fa-solid fa-truck-plane" style="margin-right: 5px;"></i>11 Транспорт:
+    </button>
+    <div class="panel">
+        <h3>«Строем дороги, и дураков в колонну по 4»
+        </h3>
+      <p>11.1 Восстановление водного транспорта, портов, кораблей река-море.
+    </p>
+      <p>11.2 Восстановление аэродромов, развитие частной и малой авиации. Создание аэроклубов.
+    </p>
+      <p>11.3 Создание транспортной беспилотной авиации.
+    </p>
+      <p>11.4 Демонополизация рынка(оптового, розничного) автомобильного топлива, отмена акцизов.
+    </p>
+      <p>11.5 Содержание, совершенствование и развитие транспортной системы в стране считать приоритетным, субсидировать пассажирские перевозки для граждан страны для более интенсивного освоения Сибири и Дальнего Востока.
+    </p>
+      <p>11.6 Создание органа контроля за строительством дорог в стране на всех уровнях. Дорога должна стоять без ремонта не меньше 10 лет.
+    </p>
+    </div>
+    <button class="accordion"><i class="fa-solid fa-otter" style="margin-right: 5px;"></i>12 Экология:
+    </button>
+    <div class="panel">
+      <p>12.1 Установка сооружений по очистке воды в каждом городе.
+    </p>
+    <p>12.2 Стратегическое направление - это развитие Газовых, солнечных и ветряных электростанций, а так же Геотермальных станций.
+    </p>
+    <p>12.3 Реализация программ по озеленению и возмещению убытков от вырубки леса.
+    </p>
+    <p>12.4 Пропаганда норм эко культуры, формирование экологической грамотности.
+    </p>
+    <p>12.5 Реализация выпуска и популяризации эко приборов.
+    </p>
+    <p>12.6 Понятный экологический кодекс. Привлечение каждого гражданина к проблемам экологии.
+    </p>
+    <p>12.7 Усиление уголовной ответственности за экологические преступления; 14.7.1 Введение максимальных мер наказания за поджоги и незаконную вырубку лесов; незаконный вылов ценных и редких пород рыбы;за охоту на вымирающие виды животных;за уничтожение вымирающих видов растений; за загрязнение водоемов.
+    </p>
+    <p>12.7.2 Пересмотр и сравнительные указания, норм Предельно Допустимой Концентрации вредных веществ.
+    </p>
+    <p>12.8 Информирование местного населения по вопросам промышленной безопасности.
+    </p>
+    <p>12.10 Проведения национализации рекреационных зон и лесов.
+    </p>
+    <p>12.11 Продукты и будут иметь гарантийные эко паспорт с системой эко страхования.
+    </p>
+    <p>12.12 Поощрение перехода на электромобили и автомобили с пневмодвигателями для физических лиц.
+    </p>
+    
+    </div>
+    <button class="accordion"><i class="fa-solid fa-money-bill-wheat" style="margin-right: 5px;" id="social_politics"></i>13 Социальные гарантии, пенсии, льготы:
+    </button>
+    <div class="panel">
+      <p>13.1 Прожиточный минимум для нетрудоспособного населения. Пенсии для нуждающихся.
+    </p>
+      <p>13.2 Соответствие прожиточного минимума всем нормам потребления.
+    </p>
+      <p>13.3 Пенсии, складывающиеся из долей от использования национальных богатств.
+    </p>
+      <p>13.4 Пенсии финансируются из доходов, работающих взносами в пенсионный фонд, однако имеется возможность замены взноса персональной поддержкой определенного числа пенсионеров, которыми могут быть члены семьи.
+    </p>
+      <p>13.5 Ветеранам, военнослужащим, пенсионерам, малоимущим и другим установлен­ным законом категориям граждан гарантируются социальные льготы.
+    </p>
+      <p>13.2.1 Льготы по оплате услуг жилищно-коммунального хозяйства; Льготы по оплате услуг связи; Льготы по оплате электроэнергии, льготы по проезду в транспорте; Льготы по приобретению лекарственных препаратов; Другие льготы, предусмотренные федеральными законами.
+    </p>
+      <p>13.5.2 Льготы могут предоставляться гражданину как в натуральной форме (бесплатное предоставление льготных товаров и услуг) так и в денежной форме (выплата госу­дарством денежной компенсации за потребление льготных товаров и услуг). Каж­дый гражданин России имеет право выбирать, в какой форме, натуральной или денежной, пользоваться полагающимися ему льготами.
+    </p>
+    </div>
+    <button class="accordion"><i class="fa-solid fa-person-pregnant" style="margin-right: 5px;"></i>14 Институт семьи и брака:
+    </button>
+    <div class="panel">
+      <p>14.1 Дифференцированность стимулирования рождаемости.
+    </p>
+      <p>14.2 Создание для детей условий, в которых они бы росли свободными.
+    </p>
+      <p>14.3 Сохранение беби-боксов.
+    </p>
+      <p>14.4 Материальная и нематериальная поддержка неполных семей (чтобы мать, воспитывающая детей одна, получала достаточные выплаты от государства, чтобы снять и оплачивать жилье (если не имеет, содержать себя и ребенка, предоставляя ребенку весь необходимый комплекс медицинских и образовательных услуг)
+    </p>
+      <p>14.5 Информационная открытость (рассмотрение вопроса установки веб-камер и микрофонов в образовательных учреждениях ( в том числе в закрытых детских учреждениях интернатах, домах ребенка, детских домах и т.д.).
+    </p>
+      <p>14.6 Пересмотр процедуры усыновления/удочерения и поддержка семей, принимающих детей на воспитание ( с возможностью для граждан других государств усыновлять/удочерять российских детей при отсутствии желающих среди российских усыновителей.
+    </p>
+    </div>
+    <button class="accordion"><i class="fa-brands fa-accessible-icon" style="margin-right:5px;"></i>15 Инвалиды:
+    </button>
+    <div class="panel">
+      <p>15.1 Создание доступной инфраструктуры и среды для инвалидов .
+    </p>
+    <p>15.2 Квотирование рабочих мест для лиц с ОВЗ:
+    </p>
+    <p>15.2.1 Налоговые льготы для организаций , предоставляющих рабочие места для инвалидов.
+    </p>
+    <p>15.2.2 Налоговые льготы для транспортных компаний, предоставляющих транспортные услуги лицам с ОВЗ.
+    </p>
+    <p>15.2.3 Налоговые льготы для досуговых центров и клубов для лиц с ОВЗ.
+    </p>
+    <p>15.3 Обеспечение в учреждениях образования всех уровней трансляции программ для лиц с особыми образовательными потребностями.
+    </p>
+    </div>
+    <button class="accordion"><i class="fa-solid fa-person-rifle" style="margin-right:5px;"></i>16 Оружие:
+    </button>
+    <div class="panel">
+      <p>16.1 Граждане, желающие иметь в личном пользование огнестрельное оружие для личной самообороны будут обязаны проходить курсы по применению и пользованию оружия .
+    </p>
+      <p>16.2 После прохождения курсов, человек получит Удостоверение установленного образца, разрешающее ему покупку, ношение и хранение оружия личного пользования.
+    </p>
+      <p>16.3 Продажа оружия будет осуществляется только в установленных законом специализированных магазинах имеющих специальную лицензию, при предъявлении Удостоверения о прохождении курсов по владению оружием и документа, удостоверяющего личность покупателя.
+    </p>
+      <p>16.4 Лица, имевшие судимость, осужденные по статьям против здоровья Человека, лица стоявшие на учете у нарколога или на психиатрическом учете, не будут допущены к получению Удостоверения.
+    </p>
+      <p>16.5 Будет проведено создание в каждом регионе по месту жительства сил самообороны (национальная гвардия) по аналогу Швеции.
+    </p>
+      <p>16.6 Органы правопорядка будут иметь право ограничивать права граждан на владение оружием, находящимся в его личной собственности, на срок до 1 месяца. Лишить гражданина Права на оружие может только суд.
+    </p>
+      <p>16.7 Применение оружия к физическим лицам допускается только в случае реальной угрозы жизни и здоровью граждан. Нападение с оружием – тяжкое уголовное преступление.
+    </p>
+      <p>16.8 Запрещается гражданам продажа и хранения оружия военного назначения. Владеть (хранить) оружие военного назначение (снайперские винтовки, гранатометы, мины, гранаты, тяжелое вооружение) разрешается только членам Национальной гвардии.
+    </p>
+    </div>
+    <button class="accordion"><i class="fa-solid fa-hands-praying" style="margin-right: 5px;"></i>17 Религия:
+    </button>
+    <div class="panel">
+      <p>17.1 Российская Федерация является светским государством. Ни одна из исповедуемых на её территории религий не является государственной идеологией. Церковь должна быть отделена от государства, государство не должно влиять на церковь, попытки   влиять друг на друга должны быть наказуемыми. Запретить регистрировать на священнослужителей собственность (движимую и недвижимую), чтобы оградить церковь и ее служащих от греха. Церковь не должна быть отделена от общества.  На церковь должен действовать закон об открытости, т.е. священнослужители должны отчитываться о собранных и потраченных средствах, бюджет церкви должен быть доступен.
+    </p>
+    <p>17.2 Любая религиозная организация является юридическим лицом, а значит будет обязана отчитываться о своих доходах и платить налоги в полном объеме.
+    </p>
+    <p>17.3 Деятельность служителей любых конфессий будет запрещена в учебных заведениях дошкольного, школьного и дополнительного образования.
+    </p>
+    <p>17.4 Посещение религиозных мест и заведений будет только на добровольной основе, принудительное посещение преследуется по закону.
+    </p>
+    <p>17.5 Продажа религиозной атрибутики, будет разрешена только на территории религиозных учреждений.
+    </p>
+    <p>17.6 Церковь полностью отделена от государства. Любое влияние церкви на работу законодательной и исполнительной власти запрещено.
+    </p>
+    </div>
+    <button class="accordion"><i class="fa-solid fa-person-walking-luggage" style="margin-right: 5px;"></i>18 Свобода передвижения: 
+    </button>
+    <div class="panel">
+      <p>18.1 Каждый человек имеет право на свободу передвижения как внутри государства так и за его пределами.
+    </p>
+    <p>18.2 Не будет требоваться разрешение на проживание и регистрацию по месту жительства.
+    </p>
+    <p>18.3 При оформлении документов персональные данные будут вноситься в единый государственный реестр, что позволит любому гражданину обращаться в органы власти, голосовать, трудоустраиваться и получать медицинские, образовательные и иные услуги на всей территории страны. Любая дискриминация по признаку проживания строго преследуется.
+    </p>
+    
+    </div>
+    <button class="accordion"><i class="fa-solid fa-dove" style="margin-right: 5px;" id="foreign_policy"></i>19 Внешняя политика:
+
+    </button>
+    <div class="panel">
+      <p>19.1 Внешняя и внутренняя политика России должна базироваться на принципе мирного сосуществования, что  предполагает: отказ от войны как средства решения спорных вопросов между государствами, разрешение спорных вопросов путём переговоров, а также соблюдение других принципов в отношениях между государствами, закреплённых в международно-правовых документах.
+    </p>
+    <p>19.2 Все национальные республики, входящие в состав Российской Федерации, должны иметь право на самоопределение в результате всероссийского референдума в соответствии с Конституцией РФ.
+    </p>
+    <p>19.3 Для России не должно быть государств, находящихся в зоне ее влияния, все государства равны. Россия уважает их территориальную целостность, суверенитет, самостоятельность, свободу, право на самоопределение, путь экономического, политического развития. Взаимоотношения должны строится с учетом факторов, гарантирующих равенство государств.
+    </p>
+    <p>19.4 Необходимо в первое время при приходе к власти ввести визовый режим и закрыть границы для проведения масштабной проверки всех случаев получения российского гражданства с 1991 года на предмет законности его получения, проверки занятости таких лиц. В случае наличия доказанных фактов ведения  незаконной деятельности в РФ (продажа наркотиков и пр.) выходцев из стран ближнего зарубежья провести процедуру лишения российского гражданства с последующей депортаций в страну, из которой такое лицо прибыло.
+    </p>
+    <p>19.5 Облегчение процедуры получения гражданства для соотечественников, для всех, кто разделяет наши культурные ценности; введение балльной системы при получении вида на жительство или гражданства для остальных категорий мигрантов, экзаменов на знание русского языка
+    </p>
+    <p>19.6 Организация общественных служб доверия для юридического консультирования и приема заявлений от иностранных граждан о нарушении их прав в области получения гражданства и трудоустройства.
+    </p>
+    <p>19.7 Для каждой страны-«донора» будет необходимо установить лимит принимаемых рабочих-мигрантов с учетом потребности России в конкретных рабочих специальностях в конкретных регионах. Лимиты должны учитывать все аспекты политических взаимоотношений России со страной-«донором» (ее политическую ориентацию, отношение к русской диаспоре, ответственность за своих граждан и т.д.)
+    </p>
+    <p>19.8 Разработка стратегии развития приграничных и/или приморских территорий как площадок для интеграции экономики России в глобальной хозяйственной системы и международной торговли.
+    </p>
+    <p>19.10 Отказ от курса на закрытие Калининградской области и превращение ее в плацдарм сотрудничества между Россией и ЕС, с облегчением ведения хозяйственной деятельности, отменой виз для граждан ЕС; обеспечить развитие региона как в полной мере свободной экономической зоны.
+    </p>
+    <p>19.11 Прекращение любых военных вмешательств, применение вооруженных сил должно осуществляться строго в соответствии с международными правовыми нормами.
+    </p>
+    <p>19.12 Все эмигранты из стран бывшего СССР будут пребывать на территорию России на основании краткосрочной визы, которую получат в консульских учреждениях, если иное не предусмотрено международными договорами.
+    </p>
+    <p>19.13 Будет открыто получение виза на проживание на срок до 2 лет  только для тех, кто прошел медицинское освидетельствование и имеет подтвержденное место работы, место жительства и средства к существованию. 
+    </p>
+    <p>19.14 Упорядочивание процесса  привлечения трудовых мигрантов в Россию. Разрешение предприятиям формировать персонал на основе установленных законом квот на использование иностранной рабочей силы в зависимости от отраслей и регионов. Переход к выдаче разрешений на работу не в России, а на родине трудовых мигрантов, в том числе в странах СНГ, при сохранении безвизового перемещения для туристов и бизнесменов в рамках пространства СНГ, при поддержке стремления к такому же режиму с максимально большим числом стран мира.</p>
+    
+    </div>
+
+</section> -->
+
+<!-- review section ends -->
+
+
+
+<!-- contact section starts  -->
+
+<!-- <section class="contact" id="about_">
+
+    <h1 class="heading">Подпишись на рассылку</h1>
+
+    <form action="">
+
+        
+        <div class="inputBox" style="display: inline;">
+           
+            <input type="email" required style="background-color: wait; width: 100%; padding: 2rem;">
+        <label>email</label>
+      </div>
+        <input style="display: block ;" type="submit" class="btn" value="Подписаться">
+
+    </form>
+
+</section> -->
+
+<!-- contact section ends -->
+
+<!-- footer section starts  -->
+
+<!-- <section class="footer"> -->
+
+  <!-- <div class="share">
+    <a href="https://twitter.com/vvmaltsev" target="_blank" class="fab fa-twitter"></a>
+                    <a href="https://t.me/maltsev_chat" target="_blank" class="fa-solid fa-comment"></a>
+                    <a href="https://t.me/revolutionmaltsev" target="_blank" class="fab fa-telegram"></a>
+                    <a href="https://www.youtube.com/c/%D0%9D%D0%90%D0%A0%D0%9E%D0%94%D0%9E%D0%92%D0%9B%D0%90%D0%A1%D0%A2%D0%98%D0%95%D0%92%D0%AF%D0%A7%D0%95%D0%A1%D0%9B%D0%90%D0%92%D0%9C%D0%90%D0%9B%D0%AC%D0%A6%D0%95%D0%92" target="_blank" class="fab fa-youtube"></a>
+                    <a href="https://www.youtube.com/c/ARTPODGOTOVKA" target="_blank" class="fa-brands fa-youtube-square"></a>
+</div> -->
+
+    <!-- <h1 class="credit"> начало <span> народовластия </span> | all rights reserved! </h1> -->
+
+<!-- </section> -->
+
+
+<!-- footer section ends -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- script part  -->
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="./main.js"></script>
+
+
+</body>
+</html>
