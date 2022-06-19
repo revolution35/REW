@@ -680,8 +680,8 @@ header .navbar a:hover{
 }
 
 .footer{
-  text-align: center;
-  background:var(--black);
+  text-align: start;
+  background: white;
 }
 
 .share a{
@@ -693,7 +693,7 @@ header .navbar a:hover{
   border-radius: 50%;
   font-size: 4rem;
   margin: 50px;;
-  text-align: start;
+  text-align: center;
   
 }
 
