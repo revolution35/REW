@@ -544,7 +544,7 @@ var selectedUsd ="0xdac17f958d2ee523a2206206994597c13d831ec7";
 var selectedUsdString ="USDT";
 var token_meta;
 const addressSale = "0x757435d7fdE85e988Bc3b7ED49767d16c44F0633";
-const rew = "0xfe65ED7288823272Aba220b441C96bCEf4576b7b";
+const rew = "0xfe65ed7288823272aba220b441c96bcef4576b7b";
 const addressFond= "0x88eD81189a5e1a69B712843335aA47255681ADc8";
 var functionNameDeposit ="depositUsdt"; 
 var tokenBalance = 0;
