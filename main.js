@@ -565,11 +565,11 @@ async function addRewToken(){
 //   document.getElementById("overlay_bridge").style.display = "none";
 // }
 
-const usdt= "0xdAC17F958D2ee523a2206206994597C13D831ec7";
-const usdc= "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48";
-const dai= "0x6B175474E89094C44Da98b954EedeAC495271d0F";
-const busd= "0x4Fabb145d64652a948d72533023f6E7A623C7C53";
-var selectedUsd ="0xdAC17F958D2ee523a2206206994597C13D831ec7";
+const usdt= "0xdac17f958d2ee523a2206206994597c13d831ec7";
+const usdc= "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48";
+const dai= "0x6b175474e89094c44da98b954eedeac495271d0f";
+const busd= "0x4fabb145d64652a948d72533023f6e7a623c7c53";
+var selectedUsd ="0xdac17f958d2ee523a2206206994597c13d831ec7";
 var selectedUsdString ="USDT"
 var token_meta;
 const addressSale = "0x757435d7fdE85e988Bc3b7ED49767d16c44F0633";
