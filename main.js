@@ -446,7 +446,7 @@ async function getNetwork(){
 // });
  amountdep = 0;
 async function plusAmount(){
-   if(amountdep<2500){ 
+   if(amountdep<1000){ 
     amountdep+=50;
 
   document.getElementById("amout_deposit").value= amountdep;
