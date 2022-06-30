@@ -709,8 +709,17 @@ async function getTokenBalance() {
     var amount_rew = (amount * 10);
     document.getElementById("amount_rew").innerHTML = (amount_rew.toFixed(2) + " REW");
     getAllowace();
-   }else{    document.getElementById("amout_deposit").value = 0;
-  }
+   }if(tokenBalance>1000){
+    document.getElementById("amout_deposit").value = 1000;
+    document.getElementById("btn_deposit").disabled = false;
+    document.getElementById("btn_deposit").className = "btn";
+    var amount = document.getElementById("amout_deposit").value;
+    var amount_rew = (amount * 10);
+    document.getElementById("amount_rew").innerHTML = (amount_rew.toFixed(2) + " REW");
+    getAllowace();
+   }
+   else{    document.getElementById("amout_deposit").value = 0;
+   }
   }
    document.getElementById("max").onclick = setMax;
    document.getElementById("token_balance").onclick = setMax;
