@@ -454,7 +454,7 @@ async function plusAmount(){
   var amount = document.getElementById("amout_deposit").value;
   var amount_rew = (amount * 10);
   document.getElementById("amount_rew").innerHTML = ("Получаете: " + amount_rew.toFixed(2) + " REW");
-  if (amount > 50 ){
+  if (amount >= 50 ){
     getAllowace();
   }else{
     document.getElementById("btn_deposit").className = "btn_n";
@@ -476,19 +476,23 @@ async function minusAmount(){
   var amount = document.getElementById("amout_deposit").value;
   var amount_rew = (amount * 10);
   document.getElementById("amount_rew").innerHTML = ("Получаете: " + amount_rew.toFixed(2) + " REW");
-  if (amount > 0 ){
+  
     getAllowace();
-  }else{
-    document.getElementById("btn_deposit").className = "btn_n";
-    document.getElementById("btn_deposit").disabled = true;
-  }
+  
+    
+  
 }else{
   document.getElementById("minus").disabled=true;
   document.getElementById("plus").disabled=false;
+  document.getElementById("btn_deposit").className = "btn_n";
+  document.getElementById("btn_deposit").innerHTML = "Купить REW";
+    document.getElementById("btn_deposit").disabled = true;
 }
 }
 document.getElementById("plus").onclick=plusAmount;
 document.getElementById("minus").onclick=minusAmount;
+document.getElementById("amout_deposit").value= amountdep;
+
 
 
 document.getElementById('amout_deposit').addEventListener("keyup", function (evt) {
