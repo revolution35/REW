@@ -444,8 +444,7 @@ async function getNetwork(){
 
 //   // returns the new account --> ex. "0x1a2b3c4d..."
 // });
-
-amountdep = 0;
+ amountdep = 0;
 async function plusAmount(){
    if(amountdep<2500){ 
     amountdep+=50;
@@ -495,7 +494,8 @@ document.getElementById("amout_deposit").value= amountdep;
 
 
 
-document.getElementById('amout_deposit').addEventListener("keyup", function (evt) {
+
+document.addEventListener("keyup", function (evt) {
   var amount = document.getElementById("amout_deposit").value;
   var amount_rew = (amount * 10);
   document.getElementById("amount_rew").innerHTML = ("Получаете: " + amount_rew.toFixed(2) + " REW");
@@ -687,11 +687,12 @@ async function getTokenBalance() {
     document.getElementById("btn_deposit").disabled = true;
     document.getElementById("btn_deposit").className = "btn_n";
     var amount = document.getElementById("amout_deposit").value;
-    document.getElementById("token_balance").innerHTML = "Баланс: 0.00"; 
+    document.getElementById("token_balance").innerHTML = "Баланс: 0.00";
     if (amount > 0){
       document.getElementById("btn_deposit").disabled = true;
      document.getElementById("btn_deposit").className = "btn_n";
      document.getElementById("btn_deposit").innerHTML = "Недостаточно средств";
+
     }
   }else{
    
@@ -700,6 +701,7 @@ async function getTokenBalance() {
    document.getElementById("token_balance").innerHTML ='Баланс: ' + token_balance.toFixed(2) + " "+selectedUsdString;
  
    async function setMax () {
+    if(tokenBalance>50){
     document.getElementById("amout_deposit").value = token_balance.toFixed(2);
     document.getElementById("btn_deposit").disabled = false;
     document.getElementById("btn_deposit").className = "btn";
@@ -707,6 +709,8 @@ async function getTokenBalance() {
     var amount_rew = (amount * 10);
     document.getElementById("amount_rew").innerHTML = (amount_rew.toFixed(2) + " REW");
     getAllowace();
+   }else{    document.getElementById("amout_deposit").value = 0;
+  }
   }
    document.getElementById("max").onclick = setMax;
    document.getElementById("token_balance").onclick = setMax;
