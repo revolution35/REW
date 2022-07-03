@@ -1060,8 +1060,12 @@ async function getGasPrice(){
       averangeGasPrice += (Number(gasPrice) / transactions.transactions.length);
       
   }
-     document.getElementById("gas_price").innerHTML = "Средняя стоимость комиссии сети: " + (averangeGasPrice / 10**9).toFixed(0)   + " Gwai (≈ " + (((averangeGasPrice / 10**9).toFixed(0) * 0.0000242  ) * ethPrice).toFixed(2) + " USD)  "; 
-
+ document.getElementById("gas_price").innerHTML = " " + (averangeGasPrice / 10**9).toFixed(0)   + " Gwai (≈ " + (((averangeGasPrice / 10**9).toFixed(0) * 0.0000242  ) * ethPrice).toFixed(2) + " USD)  "; 
+      if((averangeGasPrice / 10**9).toFixed(0)>50){
+        document.getElementById("gas_price").style.color="red";
+      }else{
+        document.getElementById("gas_price").style.color="green";
+      }
 }
 setTimeout(getGasPrice, 3000);
 
