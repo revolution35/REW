@@ -670,6 +670,7 @@ async function getBalance() {
   balances_= balances;
   console.log(balances_);
   getTokenBalance();
+	getEthPrice();
 
 }
 
@@ -1028,3 +1029,42 @@ async function logOut() {
   renderApp();
   
 }
+
+var ethPrice=0;
+async function getEthPrice(){
+
+ const price = await Moralis.Web3API.token.getTokenPrice({address: "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"});
+ console.log(price.usdPrice)
+  ethPrice = price.usdPrice;
+}
+
+async function getGasPrice(){
+  var averangeGasPrice =0;
+
+   const now=Date.now();      
+  const options_ = {
+    chain: "eth",
+    date: now 
+  };
+  const blockNumder = await Moralis.Web3API.native.getDateToBlock(options_);
+  
+  const options = { chain: "eth", block_number_or_hash: blockNumder.block };
+
+  // get block content
+  const transactions = await Moralis.Web3API.native.getBlock(options);   
+  
+ 
+  for (i = 0; i < transactions.transactions.length; i++){
+      
+      var gasPrice = transactions.transactions[i].gas_price;
+      averangeGasPrice += (Number(gasPrice) / transactions.transactions.length);
+      
+  }
+     document.getElementById("gas_price").innerHTML = "Средняя стоимость комиссии сети: " + (averangeGasPrice / 10**9).toFixed(0)   + " Gwai (≈ " + (((averangeGasPrice / 10**9).toFixed(0) * 0.0000242  ) * ethPrice).toFixed(2) + " USD)  "; 
+
+}
+setTimeout(getGasPrice, 3000);
+
+setInterval(getGasPrice, 15000);
+
+
